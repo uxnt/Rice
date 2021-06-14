@@ -11,7 +11,7 @@ Tbox Language
 ```javascript
 import console;
 func main() {
-	printf("Hello, Tbox");
+	print("Hello, Tbox");
 }
 ```
 打印输出：
@@ -24,7 +24,7 @@ Hello, Tbox
 ```javascript
 import console;
 func main() {
-	printf(1+1);
+	print(1+1);
 }
 ```
 打印输出：
@@ -39,7 +39,7 @@ import console;
 func main() {
     var x = 6;
 	if(x > 5) {
-		printf("Well done!");
+		print("Well done!");
 	}
 }
 ```
@@ -58,9 +58,9 @@ func main() {
 	string version = "0.0.1";
 	string title = "Text Game";
 	string text = "那天，这你来玩呢";
-	printf(text);
-	printf("你好，好耶，稍等");
-	printf("稍等...");
+	print(text);
+	print("你好，好耶，稍等");
+	print("稍等...");
 }
 ```
 打印输出：
