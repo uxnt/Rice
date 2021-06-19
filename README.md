@@ -107,7 +107,7 @@ func main() {
 |-|
 |bool|
 |int|
-|--char--|
+|~~char~~|
 |long|
 |double|
 |float|
