@@ -40,20 +40,21 @@ Tbox 中主要有如下几种类型的变量
 
 ## Tbox 关键字
 
-|关键字|说明|
-|-|-|
-|import||
-|~~var~~||
-|math||
-|string||
-|func||
-|true||
-|false||
-|if||
-|elseif||
-|else||
-|for||
-|while||
+关键字|说明
+-|-
+import|导入
+~~var~~|
+math|数学
+string|字符串
+func|函数
+true|真的
+false|假的
+null|空
+if|如果
+elseif|如果否则
+else|否则
+for|循环
+while|循环
 
 ---
 
