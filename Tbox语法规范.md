@@ -25,10 +25,46 @@ Tbox 所有的组成部分都需要名字。类名、变量名以及方法名都
 
 * 非法标识符举例：123hello、-hello 。
 
+## Tbox 变量
+Tbox 中主要有如下几种类型的变量
+
+~~* 局部变量~~
+
+~~* 类变量（静态变量）~~
+
+~~* 成员变量（非静态变量）~~
+
+## Tbox 数组
+数组是储存在堆上的对象，可以保存多个同类型变量。
 
 
+## Tbox 关键字
 
+|关键字|
+|-|
+|import|
+|~~var~~|
+|math|
+|string|
+|func|
+|true|
+|false|
+|if|
+|elseif|
+|else|
+|for|
+|while|
 
+---
+
+|~~var~~ math：|
+|-|
+|bool|
+|int|
+|~~char~~|
+|long|
+|double|
+|float|
 
 
 
