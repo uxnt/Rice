@@ -9,7 +9,8 @@ Tbox Language
 ---
 ## Tbox - 你好T型箱子
 ```javascript
-import console;
+//import console;
+import "console.tbox";
 func main() {
 	print("Hello, Tbox");
 }
@@ -22,7 +23,8 @@ Hello, Tbox
 ----
 ## Tbox - 算法
 ```javascript
-import console;
+//import console;
+import "console.tbox";
 func main() {
 	print(1+1);
 }
@@ -35,7 +37,8 @@ func main() {
 ---
 ## Tbox - 判断
 ```javascript
-import console;
+//import console;
+import "console.tbox";
 func main() {
     var x = 6;
 	if(x > 5) {
@@ -53,7 +56,8 @@ Well done!
 ---
 ## Tbox - 文本游戏
 ```javascript
-import console;
+//import console;
+import "console.tbox";
 func main() {
 	string version = "0.0.1";
 	string title = "Text Game";
