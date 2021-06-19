@@ -103,7 +103,7 @@ func main() {
 
 ---
 
-|关键字|
+|var：|
 |-|
 |bool|
 |int|
