@@ -80,7 +80,6 @@ while|循环
 ---
 ## Tbox - 你好T型箱子
 ```javascript
-//import console;
 import "console.tbox";
 func main() {
 	print("Hello, Tbox");
@@ -94,7 +93,6 @@ Hello, Tbox
 ----
 ## Tbox - 算法
 ```javascript
-//import console;
 import "console.tbox";
 func main() {
 	math i = 1 + 1;
@@ -111,7 +109,6 @@ func main() {
 ----
 ## Tbox - 你好算法
 ```javascript
-//import console;
 import "console.tbox";
 func main() {
 	math i = 50 / 20;
