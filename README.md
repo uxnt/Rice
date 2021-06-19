@@ -90,7 +90,8 @@ func main() {
 |关键字|
 |-|
 |import|
-|var|
+|~~var~~|
+|math|
 |string|
 |func|
 |true|
