@@ -40,7 +40,7 @@ func main() {
 //import console;
 import "console.tbox";
 func main() {
-    var x = 6;
+    math x = 6;
 	if(x > 5) {
 		print("Well done!");
 	}
