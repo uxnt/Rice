@@ -93,5 +93,22 @@ func main() {
 |var|
 |string|
 |func|
+|true|
+|false|
+|if|
+|elseif|
+|else|
+|for|
+|while|
 
+---
+
+|关键字|
+|-|
+|bool|
+|int|
+|char|
+|long|
+|double|
+|float|
 
