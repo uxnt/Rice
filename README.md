@@ -7,7 +7,7 @@ Tbox Language
 [![](Tbox-logo.svg)](https://github.com/beanflame/tbox)
 
 ---
-## Tbox - 你好T型箱子
+## Tbox 你好T型箱子
 ```javascript
 //import console;
 import "console.tbox";
@@ -21,7 +21,7 @@ func main() {
 Hello, Tbox
 ```
 ----
-## Tbox - 算法
+## Tbox 算法
 ```javascript
 //import console;
 import "console.tbox";
@@ -35,7 +35,7 @@ func main() {
 2
 ```
 ---
-## Tbox - 判断
+## Tbox 判断
 ```javascript
 //import console;
 import "console.tbox";
@@ -54,7 +54,7 @@ Well done!
 
 
 ---
-## Tbox - 文本游戏
+## Tbox 文本游戏
 ```javascript
 //import console;
 import "console.tbox";
@@ -84,23 +84,23 @@ func main() {
 
 
 
+## Tbox 关键字
 
-## Tbox - 关键字
-
-|关键字|
-|-|
-|import|
-|~~var~~|
-|math|
-|string|
-|func|
-|true|
-|false|
-|if|
-|elseif|
-|else|
-|for|
-|while|
+关键字|说明
+-|-
+import|导入
+~~var~~|
+math|数学
+string|字符串
+func|函数
+true|真的
+false|假的
+null|空
+if|如果
+elseif|如果否则
+else|否则
+for|循环
+while|循环
 
 ---
 
@@ -112,4 +112,6 @@ func main() {
 |long|
 |double|
 |float|
+
+
 
