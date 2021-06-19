@@ -103,7 +103,7 @@ func main() {
 
 ---
 
-|var：|
+|~~var~~ math：|
 |-|
 |bool|
 |int|
