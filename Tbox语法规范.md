@@ -78,7 +78,7 @@ while|循环
 
 
 ---
-## Tbox - 你好T型箱子
+## Tbox 你好T型箱子
 ```javascript
 import "console.tbox";
 func main() {
@@ -91,7 +91,7 @@ func main() {
 Hello, Tbox
 ```
 ----
-## Tbox - 算法
+## Tbox 算法
 ```javascript
 import "console.tbox";
 func main() {
@@ -107,7 +107,7 @@ func main() {
 2.5
 ```
 ----
-## Tbox - 你好算法
+## Tbox 你好算法
 ```javascript
 import "console.tbox";
 func main() {
