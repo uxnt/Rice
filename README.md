@@ -40,7 +40,7 @@ func main() {
 //import console;
 import "console.tbox";
 func main() {
-    math x = 6;
+    num x = 6;
 	if(x > 5) {
 		print("Well done!");
 	}
@@ -89,8 +89,7 @@ func main() {
 关键字|说明
 -|-
 import|导入
-~~var~~|
-math|数学
+num|数
 string|字符串
 func|函数
 true|真的
@@ -105,11 +104,10 @@ break|循环结束
 
 ---
 
-|~~var~~ math：|
+|num：|
 |-|
 |bool|
 |int|
-|~~char~~|
 |long|
 |double|
 |float|
