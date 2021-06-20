@@ -1,0 +1,16 @@
+number ::= "0...9"{"0...9"}["."{"0...9"}]
+identifier ::= "A...Z"|"a...z"|"_"{"A...Z"|"a...z"|"0...9"|"_"}
+string ::= double_quote"..."{"..."}double_quote
+bool_value ::=  "true"|"false"
+value ::= number | string | bool_value | identifier
+factor ::= value | "("expr1")" | "("expr2")"
+expr1 ::= factor | ("!"|"-")factor | ("++"|"--")identifier | identifier("++"|"--")
+expr2 ::= expr1 | expr2("*"|"/"|"%")expr1
+expr3 ::= expr2 | expr3("+"|"-"|">>"|"<<")expr2
+expr4 ::= expr2 | expr4(">"|">="|"<"|"<=")expr3
+expr5 ::= expr3 | expr5("=="|"!=")expr4
+expr6 ::= expr4 | expr6"&"expr5
+expr7 ::= expr5 | expr7"^"expr6
+expr8 ::= expr6 | expr8"|"expr7
+expr9 ::= expr7 | expr9"&&"expr8
+expr10 ::= expr8 | expr10"||"expr9

@@ -58,7 +58,7 @@ while|循环
 break|循环结束
 ---
 
-|~~var~~ math：|
+|~~var~~ num：|
 |-|
 |bool|
 |int|
@@ -95,7 +95,7 @@ Hello, Tbox
 ```javascript
 import "console.tbox";
 func main() {
-	math i = 1 + 1;
+	num i = 1 + 1;
 	print(i);
 	print(50/20);
 }
@@ -111,7 +111,7 @@ func main() {
 ```javascript
 import "console.tbox";
 func main() {
-	math i = 50 / 20;
+	num i = 50 / 20;
 	string he = "hello, " + i;
 	print(he);
 }
