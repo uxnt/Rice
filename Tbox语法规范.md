@@ -44,7 +44,7 @@ Tbox 中主要有如下几种类型的变量
 -|-
 import|导入
 ~~var~~|
-math|数学
+num|数
 string|字符串
 func|函数
 true|真的
@@ -58,11 +58,10 @@ while|循环
 break|循环结束
 ---
 
-|~~var~~ num：|
+|num：|
 |-|
 |bool|
 |int|
-|~~char~~|
 |long|
 |double|
 |float|
