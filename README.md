@@ -96,11 +96,13 @@ true|真的
 false|假的
 null|空
 if|如果
-elseif|如果否则
+elif|如果否则
 else|否则
 for|循环
 while|循环
 break|循环结束
+for|计数循环
+return|返回值
 
 ---
 
