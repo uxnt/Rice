@@ -1,16 +1,37 @@
-number ::= "0...9"{"0...9"}["."{"0...9"}]
-identifier ::= "A...Z"|"a...z"|"_"{"A...Z"|"a...z"|"0...9"|"_"}
-string ::= double_quote"..."{"..."}double_quote
-bool_value ::=  "true"|"false"
-value ::= number | string | bool_value | identifier
-factor ::= value | "("expr1")" | "("expr2")"
-expr1 ::= factor | ("!"|"-")factor | ("++"|"--")identifier | identifier("++"|"--")
-expr2 ::= expr1 | expr2("*"|"/"|"%")expr1
-expr3 ::= expr2 | expr3("+"|"-"|">>"|"<<")expr2
-expr4 ::= expr2 | expr4(">"|">="|"<"|"<=")expr3
-expr5 ::= expr3 | expr5("=="|"!=")expr4
-expr6 ::= expr4 | expr6"&"expr5
-expr7 ::= expr5 | expr7"^"expr6
-expr8 ::= expr6 | expr8"|"expr7
-expr9 ::= expr7 | expr9"&&"expr8
-expr10 ::= expr8 | expr10"||"expr9
+S ::= {def_var_stmt|import_stmt|def_func_stmt}; (*文法本身*)
+(*常量begin*)
+number ::= "0...9"{"0...9"}["."{"0...9"}];
+identifier ::= "A...Z"|"a...z"|"_"{"A...Z"|"a...z"|"0...9"|"_"};
+string ::= double_quote"..."{"..."}double_quote;
+bool_value ::=  "true"|"false";
+(*常量end*)
+(*表达式begin*)
+func_call ::= identifier"("[expr10{","expr10}]")";
+value ::= number | string | bool_value | identifier | func_call | "null";
+factor ::= value | "("expr")";
+expr1 ::= factor | ("!"|"-")factor | ("++"|"--")identifier | identifier("++"|"--");
+expr2 ::= expr1 | expr2("*"|"/"|"%")expr1;
+expr3 ::= expr2 | expr3("+"|"-"|">>"|"<<")expr2;
+expr4 ::= expr2 | expr4(">"|">="|"<"|"<=")expr3;
+expr5 ::= expr3 | expr5("=="|"!=")expr4;
+expr6 ::= expr4 | expr6"&"expr5;
+expr7 ::= expr5 | expr7"^"expr6;
+expr8 ::= expr6 | expr8"|"expr7;
+expr9 ::= expr7 | expr9"&&"expr8;
+expr10 ::= expr8 | expr10"||"expr9;
+(*表达式end*)
+(*语句begin*)
+import_stmt ::= "import"string";";
+def_func_stmt ::= "func"identifier"("[identifier{","identifier}]")"stmt_body;
+stmt_body ::= "{"{stmt}"}" | stmt;
+set_value_stmt ::= identifier"="expr10";";
+def_var_stmt ::= ("num"|"string")identifier["="expr10";"];
+if_stmt ::= "if("expr")"stmt_body{"elif("expr")"stmt_body}["else"stmt_body];
+while_stmt ::= "while("expr")"stmt_body;
+do_while_stmt ::= "do"stmt_body"while("expr");";
+break_stmt ::= "break;";
+return_stmt ::= "return"expr10;
+for_stmt ::= "for("expr";"expr";"expr")"stmt_body;
+expr_stmt ::= expr10";";
+stmt ::= set_value_stmt|def_var_stmt|if_stmt|while_stmt|do_while_stmt|break_stmt|return_stmt|for_stmt|expr_stmt;
+(*语句end*)
