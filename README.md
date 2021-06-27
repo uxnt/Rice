@@ -33,7 +33,7 @@
     <a href="https://gitter.im/tbox-studio/tbox-language?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
       <img src="https://img.shields.io/gitter/room/tbox-studio/tbox-language.svg?style=flat-square&colorB=96c312" alt="Gitter" />
     </a>
-    <a href="https://t.me/tbooxorg">
+    <a href="https://t.me/tbox_language">
       <img src="https://img.shields.io/badge/chat-on%20telegram-blue.svg?style=flat-square" alt="Telegram" />
     </a>
     <a href="https://jq.qq.com/?_wv=1027&k=evYz1PC3">
