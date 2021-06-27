@@ -5,11 +5,11 @@
   </a>
 
   <div>
-	<!--
+	
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AWindows">
-      <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Windows/dev.svg?style=flat-square&logo=windows" alt="github-ci" />
+      <!-- <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Windows/dev.svg?style=flat-square&logo=windows" alt="github-ci" /> -->
     </a>
-	-->
+	
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3ALinux">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Linux/dev.svg?style=flat-square&logo=linux" alt="github-ci" />
     </a>
