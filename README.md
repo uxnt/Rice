@@ -1,3 +1,49 @@
+<div align="center">
+
+  <a href="https://tbox.beanflame.cn">
+    <img width="160" heigth="160" src="https://github.com/tbox-studio/tbox-language/blob/main/Tbox-logo.svg">
+  </a>
+
+  <div>
+    <a href="https://github.com/tbox-studio/tbox/actions?query=workflow%3AWindows">
+      <img src="https://img.shields.io/github/workflow/status/tboox/tbox/Windows/dev.svg?style=flat-square&logo=windows" alt="github-ci" />
+    </a>
+    <a href="https://github.com/tbox-studio/tbox/actions?query=workflow%3ALinux">
+      <img src="https://img.shields.io/github/workflow/status/tboox/tbox/Linux/dev.svg?style=flat-square&logo=linux" alt="github-ci" />
+    </a>
+    <a href="https://github.com/tbox-studio/tbox/actions?query=workflow%3AmacOS">
+      <img src="https://img.shields.io/github/workflow/status/tboox/tbox/macOS/dev.svg?style=flat-square&logo=apple" alt="github-ci" />
+    </a>
+    <a href="https://github.com/tbox-studio/tbox/actions?query=workflow%3AAndroid">
+      <img src="https://img.shields.io/github/workflow/status/tboox/tbox/Android/dev.svg?style=flat-square&logo=android" alt="github-ci" />
+    </a>
+    <a href="https://github.com/tbox-studio/tbox/releases">
+      <img src="https://img.shields.io/github/release/tboox/tbox.svg?style=flat-square" alt="Github All Releases" />
+    </a>
+  </div>
+  <div>
+    <a href="https://github.com/tbox-studio/tbox/blob/master/LICENSE.md">
+      <img src="https://img.shields.io/github/license/tboox/tbox.svg?colorB=f48041&style=flat-square" alt="license" />
+    </a>
+    <a href="https://www.reddit.com/r/tboox/">
+      <img src="https://img.shields.io/badge/chat-on%20reddit-ff3f34.svg?style=flat-square" alt="Reddit" />
+    </a>
+    <a href="https://gitter.im/tboox/tboox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+      <img src="https://img.shields.io/gitter/room/tboox/tboox.svg?style=flat-square&colorB=96c312" alt="Gitter" />
+    </a>
+    <a href="https://t.me/tbooxorg">
+      <img src="https://img.shields.io/badge/chat-on%20telegram-blue.svg?style=flat-square" alt="Telegram" />
+    </a>
+    <a href="https://jq.qq.com/?_wv=1027&k=5hpwWFv">
+      <img src="https://img.shields.io/badge/chat-on%20QQ-ff69b4.svg?style=flat-square" alt="QQ" />
+    </a>
+    <a href="https://tboox.org/donation/">
+      <img src="https://img.shields.io/badge/donate-us-orange.svg?style=flat-square" alt="Donate" />
+    </a>
+  </div>
+
+  <p>一个用c语言实现的跨平台开发库</p>
+</div>
 
 
 [![](Tbox-logo.svg)](https://github.com/beanflame/tbox/)
