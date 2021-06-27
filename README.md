@@ -8,9 +8,9 @@ Tbox Language
 
 ---
 ## Tbox 你好T型箱子
-```javascript
-//import console;
-import "console.tbox";
+```tbox
+// <=> import console; console.print
+import {print} of "console.tbox";
 func main() {
 	print("Hello, Tbox");
 }
@@ -21,28 +21,31 @@ func main() {
 Hello, Tbox
 ```
 ----
-## Tbox 算法
-```javascript
+## Tbox 数学运算
+```tbox
 //import console;
 import "console.tbox";
 func main() {
-	print(1+1);
+	num i = 1/4 + 4^2;
+	console.print(i);
 }
 ```
 打印输出：
 
 ```
-2
+6
 ```
 ---
 ## Tbox 判断
-```javascript
+```tbox
 //import console;
-import "console.tbox";
+import {print} of "console.tbox";
 func main() {
     num x = 6;
 	if(x > 5) {
 		print("Well done!");
+	}else{
+		print("Maybe some errors!");
 	}
 }
 ```
@@ -54,10 +57,10 @@ Well done!
 
 
 ---
-## Tbox 文本游戏
-```javascript
+## Tbox 字符串
+```tbox
 //import console;
-import "console.tbox";
+import {print} of "console.tbox";
 func main() {
 	string version = "0.0.1";
 	string title = "Text Game";
@@ -75,13 +78,28 @@ func main() {
 稍等...
 ```
 
+## TBox 模块系统
+```tbox
+// module.tbox
+export func add (int a,int b):int{
+	return a + b;
+}
+```
 
+```tbox
+//main.tbox
+import {add} of module;
+import console;
 
+func main(){
+     console.print(add(1,2));
+}
+```
 
-
-
-
-
+输出:
+```
+3
+```
 
 
 ## Tbox 关键字
@@ -89,11 +107,13 @@ func main() {
 关键字|说明
 -|-
 import|导入
+of|取模块内容
+export|导出
 num|数
 string|字符串
 func|函数
-true|真的
-false|假的
+true|真(1)
+false|假(0)
 null|空
 if|如果
 elif|如果否则
@@ -102,11 +122,11 @@ for|循环
 while|循环
 break|循环结束
 for|计数循环
-return|返回值
+return|返回
 
 ---
 
-|num：|
+|num == int|
 |-|
 |bool|
 |int|
