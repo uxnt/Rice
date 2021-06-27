@@ -4,7 +4,7 @@ Tbox Language
 
 # Tbox Language
 
-[![](Tbox-logo.svg)](https://github.com/beanflame/tbox)
+[![](Tbox-logo.svg)](https://github.com/beanflame/tbox/)
 
 ---
 ## Tbox 你好T型箱子
