@@ -39,9 +39,11 @@
     <a href="https://jq.qq.com/?_wv=1027&k=evYz1PC3">
       <img src="https://img.shields.io/badge/chat-on%20QQ-ff69b4.svg?style=flat-square" alt="QQ" />
     </a>
+	  <!--
     <a href="https://tboox.org/donation/">
       <img src="https://img.shields.io/badge/donate-us-orange.svg?style=flat-square" alt="Donate" />
     </a>  
+	  -->
   </div>
   <p>Tbox编程语言</p>
 </div>
