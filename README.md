@@ -5,41 +5,54 @@
   </a>
 
   <div>
+	<!--
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AWindows">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Windows/dev.svg?style=flat-square&logo=windows" alt="github-ci" />
     </a>
+	-->
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3ALinux">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Linux/dev.svg?style=flat-square&logo=linux" alt="github-ci" />
     </a>
+	  
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AmacOS">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/macOS/dev.svg?style=flat-square&logo=apple" alt="github-ci" />
     </a>
+	  
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AAndroid">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Android/dev.svg?style=flat-square&logo=android" alt="github-ci" />
     </a>
+	  
     <a href="https://github.com/tbox-studio/tbox-language/releases">
       <img src="https://img.shields.io/github/release/tbox-studio/tbox-language.svg?style=flat-square" alt="Github All Releases" />
+	    
     </a>
+	  
   </div>
   <div>
     <a href="https://github.com/tbox-studio/tbox-language/blob/master/LICENSE.md">
       <img src="https://img.shields.io/github/license/tbox-studio/tbox-language.svg?colorB=f48041&style=flat-square" alt="license" />
     </a>
+	  
     <a href="https://www.reddit.com/r/tboox/">
       <img src="https://img.shields.io/badge/chat-on%20reddit-ff3f34.svg?style=flat-square" alt="Reddit" />
     </a>
+	  
     <a href="https://gitter.im/tboox/tboox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
       <img src="https://img.shields.io/gitter/room/tbox-studio/tbox-language.svg?style=flat-square&colorB=96c312" alt="Gitter" />
     </a>
+	  
     <a href="https://t.me/tbooxorg">
       <img src="https://img.shields.io/badge/chat-on%20telegram-blue.svg?style=flat-square" alt="Telegram" />
     </a>
+	  
     <a href="https://jq.qq.com/?_wv=1027&k=5hpwWFv">
       <img src="https://img.shields.io/badge/chat-on%20QQ-ff69b4.svg?style=flat-square" alt="QQ" />
     </a>
+	  
     <a href="https://tboox.org/donation/">
       <img src="https://img.shields.io/badge/donate-us-orange.svg?style=flat-square" alt="Donate" />
     </a>
+	  
   </div>
 
   <p>Tbox编程语言</p>
