@@ -26,7 +26,7 @@ Tbox 所有的组成部分都需要名字。类名、变量名以及方法名都
 
 * 标识符是大小写敏感的。
 
-* 合法标识符举例：hello、Hello、_hello__、_hello__、_hello__、hello612__、__1_value 。
+* 合法标识符举例：hello、Hello、_hello__、_HELLO__、hello612__、__1_value 。
 
 * 非法标识符举例：123hello、-hello 。
 
