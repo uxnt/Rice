@@ -42,17 +42,9 @@
     </a>
   </div>
 
-  <p>一个用c语言实现的跨平台开发库</p>
-	
-	
-	<p>（T型箱子）语言</p>
+  <p>Tbox编程语言</p>
 </div>
 
-
-~~[![](Tbox-logo.svg)](https://github.com/beanflame/tbox/)~~
-
-# Tbox Language
-（T型箱子）语言
 
 Tbox Language
 
