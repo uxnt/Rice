@@ -1,0 +1,1 @@
+@antlr TBox.g4 -long-messages  -o . && javac  *.java && grun TBox tbox hello.tbox -gui -SLL -diagnostics
