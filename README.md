@@ -1,7 +1,7 @@
 <div align="center">
 
   <a href="https://tbox.beanflame.cn">
-    <img width="160" heigth="160" src="https://github.com/tbox-studio/tbox-language/blob/main/Tbox-logo.svg">
+    <img width="800" heigth="600" src="https://github.com/tbox-studio/tbox-language/blob/main/Tbox-logo.svg">
   </a>
 
   <div>
