@@ -126,7 +126,7 @@ return|返回
 
 ---
 
-|num == int|
+|num(int的别称)|
 |-|
 |bool|
 |int|
