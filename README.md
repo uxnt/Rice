@@ -1,6 +1,6 @@
 <div align="center">
 
-  <a href="https://tbox.beanflame.cn">
+  <a href="https://github.com/tbox-studio/tbox-language">
     <img width="600" heigth="215" src="https://github.com/tbox-studio/tbox-language/blob/main/tbox-logo-600x215.png">
   </a>
 
@@ -43,10 +43,13 @@
   </div>
 
   <p>一个用c语言实现的跨平台开发库</p>
+	
+	
+	<p>（T型箱子）语言</p>
 </div>
 
 
-[![](Tbox-logo.svg)](https://github.com/beanflame/tbox/)
+~~[![](Tbox-logo.svg)](https://github.com/beanflame/tbox/)~~
 
 # Tbox Language
 （T型箱子）语言
