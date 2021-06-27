@@ -24,7 +24,7 @@
     </a> 
   </div>
   <div>
-    <a href="https://github.com/tbox-studio/tbox-language/blob/master/LICENSE.md">
+    <a href="https://github.com/tbox-studio/tbox-language/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/tbox-studio/tbox-language.svg?colorB=f48041&style=flat-square" alt="license" />
     </a>
     <a href="https://www.reddit.com/r/tboox/">
