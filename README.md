@@ -27,7 +27,7 @@
     <a href="https://github.com/tbox-studio/tbox-language/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/tbox-studio/tbox-language.svg?colorB=f48041&style=flat-square" alt="license" />
     </a>
-    <a href="https://www.reddit.com/r/tboox/">
+    <a href="https://www.reddit.com/r/tbox-studio/">
       <img src="https://img.shields.io/badge/chat-on%20reddit-ff3f34.svg?style=flat-square" alt="Reddit" />
     </a>
     <a href="https://gitter.im/tbox-studio/tbox-language?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
