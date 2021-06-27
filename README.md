@@ -9,16 +9,12 @@
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AWindows">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Windows/dev.svg?style=flat-square&logo=windows" alt="github-ci" />
     </a>
-	-->
-	<!--
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3ALinux">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Linux/dev.svg?style=flat-square&logo=linux" alt="github-ci" />
     </a>
-	-->
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AmacOS">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/macOS/dev.svg?style=flat-square&logo=apple" alt="github-ci" />
     </a>
-	  <!--
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AAndroid">
       <img src="https://img.shields.io/github/workflow/status/tbox-studio/tbox-language/Android/dev.svg?style=flat-square&logo=android" alt="github-ci" />
     </a>
