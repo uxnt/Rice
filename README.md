@@ -27,7 +27,6 @@
     <a href="https://github.com/tbox-studio/tbox-language/blob/master/LICENSE.md">
       <img src="https://img.shields.io/github/license/tbox-studio/tbox-language.svg?colorB=f48041&style=flat-square" alt="license" />
     </a>
-	<!--
     <a href="https://www.reddit.com/r/tboox/">
       <img src="https://img.shields.io/badge/chat-on%20reddit-ff3f34.svg?style=flat-square" alt="Reddit" />
     </a>
@@ -43,7 +42,6 @@
     <a href="https://tboox.org/donation/">
       <img src="https://img.shields.io/badge/donate-us-orange.svg?style=flat-square" alt="Donate" />
     </a>  
-	-->
   </div>
   <p>Tbox编程语言</p>
 </div>
