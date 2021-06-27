@@ -24,10 +24,10 @@
     </a> 
   </div>
   <div>
-	  <!--
     <a href="https://github.com/tbox-studio/tbox-language/blob/master/LICENSE.md">
       <img src="https://img.shields.io/github/license/tbox-studio/tbox-language.svg?colorB=f48041&style=flat-square" alt="license" />
     </a>
+	<!--
     <a href="https://www.reddit.com/r/tboox/">
       <img src="https://img.shields.io/badge/chat-on%20reddit-ff3f34.svg?style=flat-square" alt="Reddit" />
     </a>
@@ -37,7 +37,7 @@
     <a href="https://t.me/tbooxorg">
       <img src="https://img.shields.io/badge/chat-on%20telegram-blue.svg?style=flat-square" alt="Telegram" />
     </a>
-    <a href="https://jq.qq.com/?_wv=1027&k=5hpwWFv">
+    <a href="https://jq.qq.com/?_wv=1027&k=evYz1PC3">
       <img src="https://img.shields.io/badge/chat-on%20QQ-ff69b4.svg?style=flat-square" alt="QQ" />
     </a>
     <a href="https://tboox.org/donation/">
