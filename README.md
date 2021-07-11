@@ -165,8 +165,8 @@ func main(){
 关键字|说明|支持
 -|-|-
 import|导入|√
-of|取模块内容|√
-export|导出|√
+of|取模块内容|？
+export|导出|？
 num|数|√
 string|字符串|√
 func|函数|√
