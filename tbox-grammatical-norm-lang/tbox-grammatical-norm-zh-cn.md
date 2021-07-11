@@ -85,8 +85,9 @@ return|返回值
 
 ---
 ## Tbox 你好T型箱子
-```javascript
-import "console.tbox";
+```tbox
+//import "console.tbox";
+import tbox.console;
 func main() {
 	print("Hello, Tbox");
 }
