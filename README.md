@@ -162,25 +162,25 @@ func main(){
 
 ## Tbox 关键字
 
-关键字|说明
--|-
-import|导入
-of|取模块内容
-export|导出
-num|数
-string|字符串
-func|函数
-true|真(1)
-false|假(0)
-null|空
-if|如果
-elif|如果否则
-else|否则
-for|循环
-while|循环
-break|循环结束
-for|计数循环
-return|返回
+关键字|说明|
+-|-|-
+import|导入|√
+of|取模块内容|√
+export|导出|√
+num|数|√
+string|字符串|√
+func|函数|√
+true|真(1)|√
+false|假(0)|√
+null|空|√
+if|如果|√
+elif|如果否则|√
+else|否则|√
+for|循环|√
+while|循环|√
+break|循环结束|√
+for|计数循环|√
+return|返回|√
 
 ---
 
