@@ -86,8 +86,7 @@ return|返回值
 ---
 ## Tbox 你好T型箱子
 ```tbox
-//import "console.tbox";
-import tbox.console;
+import tbox.console
 func main() {
 	print("Hello, Tbox");
 }
@@ -100,7 +99,7 @@ Hello, Tbox
 ----
 ## Tbox 算法
 ```javascript
-import "console.tbox";
+import tbox.console
 func main() {
 	num i = 1 + 1;
 	print(i);
@@ -116,7 +115,7 @@ func main() {
 ----
 ## Tbox 你好算法
 ```javascript
-import "console.tbox";
+import tbox.console
 func main() {
 	num i = 50 / 20;
 	string he = "hello, " + i;
