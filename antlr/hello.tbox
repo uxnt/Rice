@@ -1,5 +1,0 @@
-// <=> import console; console.print
-import {print} of "console.tbox";
-func main() {
-	print("Hello, Tbox");
-}
