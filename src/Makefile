@@ -1,4 +1,4 @@
-UTIL_OBJS := util/FileUtil.o util/GeneralUtil.o
+UTIL_OBJS := util/FileUtil.o util/GeneralUtil.o util/RegexUtil.o
 OBJS := $(UTIL_OBJS) main.o
 
 OUTPUT := tbox
