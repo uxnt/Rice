@@ -1,7 +1,7 @@
 #include "./util/RegexUtil.h"
 #include <iostream>
 
-std::string regex = "a|b";
+std::string regex = "'(a|b)*";
 using namespace TBox::Util::Regex;
 
 void print(ASTNode& node, int lvl = 0) {
