@@ -30,11 +30,12 @@ namespace TBox {
                 default: return '\0';
                 }
             }
-            struct Lexer {
+            class Lexer {
                 std::string regex;
                 int pos;
+                ASTNode* curToken;
                 ASTNode* genToken() {
-                    if (isEnd())
+                    if (pos >= regex.length())
                         return (ASTNode*)0;
                 #define LKAH regex[pos]
                 #define NXT regex[pos ++]
@@ -54,12 +55,22 @@ namespace TBox {
                 #undef LKAH
                 #undef NXT
                 }
+            public:
                 Lexer(std::string str) {
                     this->regex = str;
                     this->pos = 0;
+                    curToken = genToken();
+                }
+                ASTNode* peek() {
+                    return curToken;
+                }
+                ASTNode* next() {
+                    ASTNode* old = curToken;
+                    curToken = genToken();
+                    return old;
                 }
                 bool isEnd() {
-                    return pos >= regex.length();
+                    return curToken == (ASTNode*)0;
                 }
             };
 
@@ -67,7 +78,16 @@ namespace TBox {
             int cur_pos = 0;
             
             inline void genToken(Lexer& lexer) {
-                ASTNode* node = lexer.genToken();
+                ASTNode* node = lexer.next();
+                nodes.push_back(node);
+            }
+
+            inline void genOpToken(Lexer& lexer) {
+                ASTNode* node = lexer.peek();
+                if (node->type != Type::OPERATOR)
+                    node = new ASTNode(Type::OPERATOR, '&');
+                else
+                    lexer.next();
                 nodes.push_back(node);
             }
 
@@ -79,6 +99,7 @@ namespace TBox {
                 genToken(lexer);
                 if (nodes[cur_pos]->type == Type::BRACKET) {
                     cur_pos ++;
+                    std::cout << "a";
                     _start(lexer);
                     cur_pos --;
                     genToken(lexer);
@@ -86,6 +107,8 @@ namespace TBox {
                     fac->addChild(nodes[cur_pos ++]);
                     fac->addChild(nodes[cur_pos ++]);
                     fac->addChild(nodes[cur_pos]);
+                    nodes.pop_back();
+                    nodes.pop_back();
                     cur_pos -= 2;
                     nodes[cur_pos] = fac;
                 }
@@ -97,8 +120,8 @@ namespace TBox {
             }
 
             void _expr(Lexer& lexer) {
-                if (lexer.isEnd()) return;
-                genToken(lexer);
+                if (lexer.isEnd() || (lexer.peek()->type == Type::BRACKET && lexer.peek()->value == ')')) return;
+                genOpToken(lexer);
                 cur_pos += 2;
                 _factor(lexer);
                 cur_pos -= 2;
@@ -106,6 +129,8 @@ namespace TBox {
                 expr->addChild(nodes[cur_pos ++]);
                 expr->addChild(nodes[cur_pos ++]);
                 expr->addChild(nodes[cur_pos]);
+                nodes.pop_back();
+                nodes.pop_back();
                 cur_pos -= 2;
                 nodes[cur_pos] = expr;
                 _expr(lexer);
