@@ -46,7 +46,7 @@ namespace TBox {
                 delete[] transform_matrix;
             }
             void DFA::addTranform(short from, short to, short set) {
-                transform_matrix[from][set] = to;   
+                transform_matrix[from][set] = to;
             }
             short DFA::getTransform(short from, short set) {
                 return transform_matrix[from][set];
@@ -67,6 +67,48 @@ namespace TBox {
                         return -1;
                 }
                 return now_pos;
+            }
+            namespace DFAGenerator {
+                struct RegexNode {
+                    bool isOp;
+                    char value;
+                    std::vector<RegexNode> nodes;
+                };
+                RegexNode genSimpleRegexNode(Util::Regex::ASTNode* regex_node) {
+                    using namespace Util::Regex;
+                    if (regex_node->children.size() == 0) {
+                        return RegexNode{false, regex_node->value};
+                    }
+                    if (regex_node->children.size() == 1) {
+                        return genSimpleRegexNode(regex_node->children[0]);
+                    }
+                    if (regex_node->children.size() == 2) {
+                        RegexNode nd={true, regex_node->children[1]->value};
+                        nd.nodes.push_back(genSimpleRegexNode(regex_node->children[0]));
+                        return nd;
+                    }
+                    if (regex_node->children.size() == 3) {
+                        RegexNode nd={true, regex_node->children[1]->value};
+                        nd.nodes.push_back(genSimpleRegexNode(regex_node->children[0]));
+                        nd.nodes.push_back(genSimpleRegexNode(regex_node->children[2]));
+                        return nd;
+                    }
+                    return RegexNode{};
+                }
+                void printRegexNode(RegexNode nd, int lvl = 0) {
+                    for (int i = 0 ; i < lvl ; i ++)
+                        std::cout << " ";
+                    std::cout << nd.value << std::endl;
+                    for (auto child : nd.nodes)
+                        printRegexNode(child, lvl + 1);
+                }
+                std::shared_ptr<DFA> genDFAFromRegexNode(Util::Regex::ASTNode* regex_node) {
+                    printRegexNode(genSimpleRegexNode(regex_node->children[0]));
+                    return std::shared_ptr<DFA>();
+                }
+            }
+            std::shared_ptr<DFA> genDFAFromRegexNode(Util::Regex::ASTNode* regex_node) {
+                return DFAGenerator::genDFAFromRegexNode(regex_node);
             }
         }
     }
