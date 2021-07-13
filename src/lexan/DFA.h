@@ -2,6 +2,8 @@
 #define __HEADER_DFA__
 
 #include "../util/GeneralUtil.h"
+#include "../util/RegexUtil.h"
+#include <memory>
 
 namespace TBox {
     namespace Lexan {
@@ -33,6 +35,7 @@ namespace TBox {
                 void doTransform(short set);
                 int run(std::wstring program);
             };
+            std::shared_ptr<DFA> genDFAFromRegexNode(Util::Regex::ASTNode* regex_node);
         }
     }
 }
