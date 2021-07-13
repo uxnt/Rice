@@ -28,7 +28,7 @@ namespace TBox {
                     giveID(set);
                 return id[set];
             }
-            DFA::DFA(short sets_num, short states, short start_stateIn, CharSet& charsetIn, std::initializer_list<short> end_states) : start_state(start_stateIn), charset(charsetIn) {
+            DFA::DFA(short sets_num, short states, short start_stateIn, CharSet& charsetIn, std::vector<short> end_states) : start_state(start_stateIn), charset(charsetIn) {
                 this->sets_num = sets_num;
                 this->states = states;
                 this->transform_matrix = new short*[states];
@@ -67,6 +67,17 @@ namespace TBox {
                         return -1;
                 }
                 return now_pos;
+            }
+            DFABuilder::DFABuilder() {
+            }
+            void DFABuilder::addTranform(short from, short to, std::initializer_list<short> set) {
+                transforms.push_back({from, to, set});
+            }
+            void DFABuilder::addEndState(short state) {
+                end_states.push_back(state);
+            }
+            DFA* DFABuilder::build() {
+                //TODO
             }
             namespace DFAGenerator {
                 struct RegexNode {
@@ -107,13 +118,11 @@ namespace TBox {
                     for (auto child : nd.nodes)
                         printRegexNode(child, lvl + 1);
                 }
-                std::shared_ptr<DFA> genDFAFromRegexNode(Util::Regex::ASTNode* regex_node) {
-                    printRegexNode(genSimpleRegexNode(regex_node->children[0]));
-                    return std::shared_ptr<DFA>();
+                void addTransformFromRegexNode(DFABuilder& dfa, Util::Regex::ASTNode* regex_node) {
                 }
             }
-            std::shared_ptr<DFA> genDFAFromRegexNode(Util::Regex::ASTNode* regex_node) {
-                return DFAGenerator::genDFAFromRegexNode(regex_node);
+            void addTransformFromRegexNode(DFABuilder& dfa, Util::Regex::ASTNode* regex_node) {
+                DFAGenerator::addTransformFromRegexNode(dfa, regex_node);
             }
         }
     }

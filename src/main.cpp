@@ -10,7 +10,6 @@ using namespace TBox::Lexan::DFA;
 int main(int argc, char** argv) {
     ASTNode node(Type::START, 'S');
     genRegexAST(regex, node);
-    genDFAFromRegexNode(&node);
     // print(node);
     // CharSet cs;
     // cs.merge('b', 'a');

@@ -23,19 +23,33 @@ namespace TBox {
                 short sets_num;
                 short states;
                 short** transform_matrix;
-                std::initializer_list<short> end_states;
+                std::vector<short> end_states;
                 short cur_state;
                 const short start_state;
                 CharSet& charset;
             public:
-                DFA(short sets_num, short states, short start_stateIn, CharSet& charsetIn, std::initializer_list<short> end_states);
+                DFA(short sets_num, short states, short start_stateIn, CharSet& charsetIn, std::vector<short> end_states);
                 ~DFA();
                 void addTranform(short from, short to, short set);
                 short getTransform(short from, short set);
                 void doTransform(short set);
                 int run(std::wstring program);
             };
-            std::shared_ptr<DFA> genDFAFromRegexNode(Util::Regex::ASTNode* regex_node);
+            struct TransformEdge {
+                short from;
+                short to;
+                std::initializer_list<short> set;
+            };
+            class DFABuilder {
+                std::vector<TransformEdge> transforms;
+                std::vector<short> end_states;
+            public:
+                DFABuilder();
+                void addTranform(short from, short to, std::initializer_list<short> set);
+                void addEndState(short state);
+                DFA* build();
+            };
+            void addTransformFromRegexNode(DFABuilder& dfa, Util::Regex::ASTNode* regex_node);
         }
     }
 }
