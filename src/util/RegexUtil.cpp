@@ -18,7 +18,7 @@ namespace TBox {
             }
 
             inline bool isChOperator(char ch) {
-                return ch == '|';
+                return ch == '|' || ch == '*';
             }
 
             inline char escape(char ch){
@@ -122,16 +122,24 @@ namespace TBox {
             void _expr(Lexer& lexer) {
                 if (lexer.isEnd() || (lexer.peek()->type == Type::BRACKET && lexer.peek()->value == ')')) return;
                 genOpToken(lexer);
-                cur_pos += 2;
-                _factor(lexer);
-                cur_pos -= 2;
                 ASTNode* expr = new ASTNode(Type::EXPR, 'e');
-                expr->addChild(nodes[cur_pos ++]);
-                expr->addChild(nodes[cur_pos ++]);
-                expr->addChild(nodes[cur_pos]);
-                nodes.pop_back();
-                nodes.pop_back();
-                cur_pos -= 2;
+                if (nodes[cur_pos+1]->type == Type::OPERATOR && nodes[cur_pos+1]->value == '*') {
+                    expr->addChild(nodes[cur_pos ++]);
+                    expr->addChild(nodes[cur_pos]);
+                    nodes.pop_back();
+                    cur_pos --;
+                }
+                else {
+                    cur_pos += 2;
+                    _factor(lexer);
+                    cur_pos -= 2;
+                    expr->addChild(nodes[cur_pos ++]);
+                    expr->addChild(nodes[cur_pos ++]);
+                    expr->addChild(nodes[cur_pos]);
+                    nodes.pop_back();
+                    nodes.pop_back();
+                    cur_pos -= 2;
+                }
                 nodes[cur_pos] = expr;
                 _expr(lexer);
             }
