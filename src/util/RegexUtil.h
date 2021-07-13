@@ -27,6 +27,7 @@ namespace TBox {
                 ASTNode& addChild(ASTNode* node);
             };
             void genRegexAST(std::string regex, ASTNode& root);
+            void print(ASTNode& node, int lvl = 0);
         }
     }
 }

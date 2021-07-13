@@ -157,6 +157,15 @@ namespace TBox {
                 _start(lexer);
                 root.addChild(nodes[0]);
             }
+
+            void print(ASTNode& node, int lvl) {
+                for(int i = 0 ; i < lvl ; i ++)
+                    std::cout << " ";
+                std::cout << node.value << std::endl;
+                for (auto c : node.children) {
+                    print(*c, lvl + 1);
+                }
+            }
         }
     }
 }

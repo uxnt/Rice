@@ -4,8 +4,9 @@
 #include <sstream>
 
 namespace TBox {
+    typedef wchar_t wch;
     namespace Util {
-        extern std::stringstream GENERAL_STRING_STREAM;
+        extern std::wstringstream GENERAL_STRING_STREAM;
         #define _GSS GENERAL_STRING_STREAM
     }
 }

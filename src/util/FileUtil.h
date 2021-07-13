@@ -6,11 +6,11 @@
 namespace TBox {
     namespace Util {
         struct File {
-            std::string content;
+            std::wstring content;
             std::string filename;
         public:
-            std::string getContent();
-            void setContent(std::string content);
+            std::wstring getContent();
+            void setContent(std::wstring content);
             void saveContent();
             void load(std::string filename);
             void reload();

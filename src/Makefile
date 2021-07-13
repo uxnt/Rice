@@ -1,5 +1,6 @@
 UTIL_OBJS := util/FileUtil.o util/GeneralUtil.o util/RegexUtil.o
-OBJS := $(UTIL_OBJS) main.o
+LEXAN_OBJS := lexan/DFA.o
+OBJS := $(UTIL_OBJS) $(LEXAN_OBJS) main.o
 
 OUTPUT := tbox
 

@@ -4,19 +4,19 @@
 
 namespace TBox {
     namespace Util {
-        std::string File::getContent() {
+        std::wstring File::getContent() {
             return this->content;
         }
-        void File::setContent(std::string content) {
+        void File::setContent(std::wstring content) {
             this->content = content;
         }
         void File::saveContent() {
-            std::ofstream fout(filename);
+            std::wofstream fout(filename);
             fout << content;
             fout.close();
         }
         void File::load(std::string filename) {
-            std::ifstream fin(filename);
+            std::wifstream fin(filename);
             _GSS << fin.rdbuf();
             setContent(_GSS.str());
             _GSS.clear();

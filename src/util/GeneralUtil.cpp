@@ -2,6 +2,6 @@
 
 namespace TBox {
     namespace Util {
-        std::stringstream GENERAL_STRING_STREAM;
+        std::wstringstream GENERAL_STRING_STREAM;
     }
 }
