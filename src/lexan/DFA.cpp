@@ -88,10 +88,15 @@ namespace TBox {
                         return nd;
                     }
                     if (regex_node->children.size() == 3) {
-                        RegexNode nd={true, regex_node->children[1]->value};
-                        nd.nodes.push_back(genSimpleRegexNode(regex_node->children[0]));
-                        nd.nodes.push_back(genSimpleRegexNode(regex_node->children[2]));
-                        return nd;
+                        if (regex_node->children[0]->type == Type::BRACKET) {
+                            return genSimpleRegexNode(regex_node->children[1]);
+                        }
+                        else {
+                            RegexNode nd={true, regex_node->children[1]->value};
+                            nd.nodes.push_back(genSimpleRegexNode(regex_node->children[0]));
+                            nd.nodes.push_back(genSimpleRegexNode(regex_node->children[2]));
+                            return nd;
+                        }
                     }
                     return RegexNode{};
                 }

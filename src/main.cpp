@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cstring>
 
-std::string regex = "a|b";
+std::string regex = "(ac)|((ab)*)";
 using namespace TBox::Util::Regex;
 using namespace TBox::Lexan::DFA;
 

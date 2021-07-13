@@ -99,7 +99,6 @@ namespace TBox {
                 genToken(lexer);
                 if (nodes[cur_pos]->type == Type::BRACKET) {
                     cur_pos ++;
-                    std::cout << "a";
                     _start(lexer);
                     cur_pos --;
                     genToken(lexer);
