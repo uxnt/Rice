@@ -161,6 +161,7 @@ static|静态|?
 num|数|√
 string|字符串|√
 func|函数|√
+bool|逻辑|√
 true|真(1)|√
 false|假(0)|√
 null|空|√
