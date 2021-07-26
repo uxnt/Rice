@@ -63,8 +63,7 @@ Tbox Language
 ---
 ## Tbox 你好T型箱子
 ```tbox
-//import {print} from tbox.console;
-import tbox.console as this;
+import tbox.console;
 func main() {
 	print("Hello, Tbox");
 }
@@ -77,9 +76,7 @@ Hello, Tbox
 ----
 ## Tbox 数学运算
 ```tbox
-//import console;
-//import {print} from tbox.console;
-import tbox.console as this;
+import tbox.console;
 func main() {
 	num i = 1/4 + 4^2;
 	console.print(i);
@@ -93,9 +90,7 @@ func main() {
 ---
 ## Tbox 判断
 ```tbox
-//import console;
-//import {print} from tbox.console;
-import tbox.console as this;
+import tbox.console;
 func main() {
     num x = 6;
 	if(x > 5) {
@@ -115,9 +110,7 @@ Well done!
 ---
 ## Tbox 字符串
 ```tbox
-//import console;
-//import {print} from tbox.console;
-import tbox.console as this;
+import tbox.console;
 func main() {
 	string version = "0.0.1";
 	string title = "Text Game";
@@ -137,16 +130,13 @@ func main() {
 
 ## TBox 模块系统
 ```tbox
-// module.tbox
+import tbox.console;
 export func add (int a,int b):int{
 	return a + b;
 }
 ```
 
 ```tbox
-//main.tbox
-//import {add} of module;
-//import console;
 import tbox.console;
 import module;
 func main(){
@@ -171,6 +161,7 @@ static|静态|?
 num|数|√
 string|字符串|√
 func|函数|√
+bool|逻辑|√
 true|真(1)|√
 false|假(0)|√
 null|空|√
