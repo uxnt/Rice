@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'antlr'
+}
+
+group = 'tbox.language.frontend'
+archivesBaseName = 'TBox-FrontEnd'
+version = '1.0-SNAPSHOT'
+targetCompatibility = '1.8'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'tbox.language.frontend.TBoxMain'
+        attributes 'Class-Path': 'antlr4-4.9.2.jar antlr4-runtime-4.9.2.jar antlr-3.5.2.jar icu4j-61.1.jar javax.json-1.0.4.jar org.abego.treelayout.core-1.0.3.jar ST4-4.3.jar"'
+    }
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from configurations.antlr
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    antlr "org.antlr:antlr4:4.+"
+}
