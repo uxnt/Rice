@@ -1,3 +1,6 @@
+import org.gradle.internal.os.OperatingSystem
+
+
 plugins {
     id 'java'
     id 'antlr'
@@ -6,11 +9,28 @@ plugins {
 group = 'tbox.language.frontend'
 archivesBaseName = 'TBox-FrontEnd'
 version = '1.0-SNAPSHOT'
-targetCompatibility = '1.8'
-sourceCompatibility = '1.8'
+targetCompatibility = sourceCompatibility = '1.8'
+
+switch (OperatingSystem.current()) {
+    case OperatingSystem.LINUX:
+        project.ext.platformName = "linux-x86_64"
+        break
+//    Don't Support
+//    case OperatingSystem.MAC_OS:
+//        project.ext.platformName = "macos"
+//        break
+    case OperatingSystem.WINDOWS:
+        project.ext.platformName = "windows-x86_64"
+        break
+}
+
 
 repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
     mavenCentral()
+    jcenter()
 }
 
 jar {
@@ -29,4 +49,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     antlr "org.antlr:antlr4:4.+"
+    implementation 'asia.kala:llvm:+'
+    implementation "asia.kala:llvm-platform:+:$platformName"
 }

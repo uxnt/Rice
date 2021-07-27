@@ -6,22 +6,18 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import java.io.IOException;
 
 public class TBoxMain {
-    public static void run(String expr) {
-        TBoxLexer lexer = new TBoxLexer(CharStreams.fromString(expr));
+    public static void run(String file_name) throws IOException {
+        TBoxLexer lexer = new TBoxLexer(CharStreams.fromFileName(file_name));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         TBoxParser parser = new TBoxParser(tokens);
-        parser.r();
+        parser.stat();
     }
 
     public static void main(String[] args) {
-        String[] testStr = {
-                "Hello world",
-                "hello world",
-                "hi world"
-        };
-        for (String s : testStr) {
-            System.out.println("Input: " + s);
-            run(s);
+        try {
+            run(args[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
