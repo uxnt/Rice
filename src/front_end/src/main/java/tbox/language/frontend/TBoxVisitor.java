@@ -131,7 +131,7 @@ public interface TBoxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpr(TBoxParser.ExprContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link TBoxParser#library()}.
+	 * Visit a parse tree produced by {@link TBoxParser#library}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
@@ -143,7 +143,7 @@ public interface TBoxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitImportStmt(TBoxParser.ImportStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link TBoxParser#type()}.
+	 * Visit a parse tree produced by {@link TBoxParser#type}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
@@ -208,6 +208,12 @@ public interface TBoxVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDefFuncStmt(TBoxParser.DefFuncStmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TBoxParser#defGlobalVarStmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDefGlobalVarStmt(TBoxParser.DefGlobalVarStmtContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link TBoxParser#stat}.
 	 * @param ctx the parse tree

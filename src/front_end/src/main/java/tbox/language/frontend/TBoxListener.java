@@ -208,12 +208,12 @@ public interface TBoxListener extends ParseTreeListener {
 	 */
 	void exitExpr(TBoxParser.ExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link TBoxParser#library()}.
+	 * Enter a parse tree produced by {@link TBoxParser#library}.
 	 * @param ctx the parse tree
 	 */
 	void enterLibrary(TBoxParser.LibraryContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TBoxParser#library()}.
+	 * Exit a parse tree produced by {@link TBoxParser#library}.
 	 * @param ctx the parse tree
 	 */
 	void exitLibrary(TBoxParser.LibraryContext ctx);
@@ -228,12 +228,12 @@ public interface TBoxListener extends ParseTreeListener {
 	 */
 	void exitImportStmt(TBoxParser.ImportStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link TBoxParser#type()}.
+	 * Enter a parse tree produced by {@link TBoxParser#type}.
 	 * @param ctx the parse tree
 	 */
 	void enterType(TBoxParser.TypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TBoxParser#type()}.
+	 * Exit a parse tree produced by {@link TBoxParser#type}.
 	 * @param ctx the parse tree
 	 */
 	void exitType(TBoxParser.TypeContext ctx);
@@ -337,6 +337,16 @@ public interface TBoxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDefFuncStmt(TBoxParser.DefFuncStmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TBoxParser#defGlobalVarStmt}.
+	 * @param ctx the parse tree
+	 */
+	void enterDefGlobalVarStmt(TBoxParser.DefGlobalVarStmtContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TBoxParser#defGlobalVarStmt}.
+	 * @param ctx the parse tree
+	 */
+	void exitDefGlobalVarStmt(TBoxParser.DefGlobalVarStmtContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TBoxParser#stat}.
 	 * @param ctx the parse tree

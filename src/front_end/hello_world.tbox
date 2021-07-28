@@ -1,5 +1,7 @@
 import tbox.console;
 
-func main() {
+export num a;
+
+export func main() {
 	print("Hello, Tbox");
 }

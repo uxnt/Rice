@@ -263,7 +263,7 @@ returnStmt
     ;
 
 defVarStmt
-    : type Identifier('='expr)';'
+    : type Identifier('='expr)?';'
     ;
 
 ifStmt
@@ -288,6 +288,10 @@ defFuncStmt
     : 'export'? 'func' Identifier '('argsNeed')' (':'type)? '{'program'}'
     ;
 
+defGlobalVarStmt
+    : 'export'? defVarStmt
+    ;
+
 stat
-    : importStmt*defVarStmt*defFuncStmt*
+    : importStmt*defGlobalVarStmt*defFuncStmt*
     ;

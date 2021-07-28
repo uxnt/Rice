@@ -412,6 +412,18 @@ public class TBoxBaseListener implements TBoxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDefGlobalVarStmt(TBoxParser.DefGlobalVarStmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDefGlobalVarStmt(TBoxParser.DefGlobalVarStmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStat(TBoxParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}

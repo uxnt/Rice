@@ -1,6 +1,3 @@
-import org.gradle.internal.os.OperatingSystem
-
-
 plugins {
     id 'java'
     id 'antlr'
@@ -11,24 +8,9 @@ archivesBaseName = 'TBox-FrontEnd'
 version = '1.0-SNAPSHOT'
 targetCompatibility = sourceCompatibility = '1.8'
 
-switch (OperatingSystem.current()) {
-    case OperatingSystem.LINUX:
-        project.ext.platformName = "linux-x86_64"
-        break
-//    Don't Support
-//    case OperatingSystem.MAC_OS:
-//        project.ext.platformName = "macos"
-//        break
-    case OperatingSystem.WINDOWS:
-        project.ext.platformName = "windows-x86_64"
-        break
-}
-
-
 repositories {
-    maven {
-        url 'https://maven.aliyun.com/repository/public/'
-    }
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    //maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     mavenCentral()
     jcenter()
 }
@@ -36,19 +18,17 @@ repositories {
 jar {
     manifest {
         attributes 'Main-Class': 'tbox.language.frontend.TBoxMain'
-        attributes 'Class-Path': 'antlr4-4.9.2.jar antlr4-runtime-4.9.2.jar antlr-3.5.2.jar icu4j-61.1.jar javax.json-1.0.4.jar org.abego.treelayout.core-1.0.3.jar ST4-4.3.jar"'
+        attributes 'Class-Path': 'antlr4-4.9.2.jar antlr4-runtime-4.9.2.jar antlr-3.5.2.jar robovm-llvm-2.3.13.jar'
     }
 }
 
 task copyToLib(type: Copy) {
     into "$buildDir/libs"
-    from configurations.antlr
+    from configurations.runtime
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    antlr "org.antlr:antlr4:4.+"
-    implementation 'asia.kala:llvm:+'
-    implementation "asia.kala:llvm-platform:+:$platformName"
+    antlr "org.antlr:antlr4:4.9.2"
+    implementation "com.mobidevelop.robovm:robovm-llvm:2.3.+"
+    runtime "com.mobidevelop.robovm:robovm-llvm:2.3.+"
 }
