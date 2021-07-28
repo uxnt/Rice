@@ -1,5 +1,0 @@
-*.o
-*.exe
-*.stackdump
-.vscode/
-tbox
