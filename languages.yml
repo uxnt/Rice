@@ -1,0 +1,12 @@
+Tbox:
+  type: programming
+  tm_scope: source.tbox
+  ace_mode: tbox
+  codemirror_mode: clike
+  codemirror_mime_type: text/x-tboxsrc
+  color: "#4b6df3"
+  aliases:
+  - tbox
+  extensions:
+  - ".tbox"
+  language_id: 43
