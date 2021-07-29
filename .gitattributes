@@ -1,16 +1,16 @@
-* text=auto
+#* text=auto
+* text=c
 
-*.tbox linguist-language=c
 
-*.g4 linguist-language=c
+# *.tbox linguist-language=c
+# *.g4 linguist-language=c
+
 
 
 # ANTLR 100.0%
-
-
-*.tbox linguist-language=tbox
-*.c linguist-language=tbox
-*.h linguist-language=tbox
-*.cpp linguist-language=tbox
-*.hpp linguist-language=tbox
-*.java linguist-language=tbox
+#  *.tbox linguist-language=tbox
+#  *.c linguist-language=tbox
+#  *.h linguist-language=tbox
+#  *.cpp linguist-language=tbox
+#  *.hpp linguist-language=tbox
+#  *.java linguist-language=tbox
