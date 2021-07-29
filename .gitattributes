@@ -1,1 +1,6 @@
-*.c linguist-language=html
+*.tbox linguist-language=tbox
+*.c linguist-language=tbox
+*.h linguist-language=tbox
+*.cpp linguist-language=tbox
+*.hpp linguist-language=tbox
+*.java linguist-language=tbox
