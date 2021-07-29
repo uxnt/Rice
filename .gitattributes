@@ -1,11 +1,7 @@
 # *.tbox linguist-language=c
-*.g4 linguist-language=c
-*.java linguist-language=tbox
-
-
+#*.g4 linguist-language=c
+#*.java linguist-language=tbox
 #* .tbox linguist-language = languages.yml
-
-
 # * text=auto
 # * text=c
 # ANTLR 100.0%
