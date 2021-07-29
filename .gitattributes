@@ -1,6 +1,6 @@
 *.tbox linguist-language=c
 *.g4 linguist-language=c
-*.java linguist-language=c
+*.java linguist-language=tbox
 
 
 # * text=auto
