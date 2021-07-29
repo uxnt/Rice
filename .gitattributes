@@ -2,6 +2,11 @@
 
 *.tbox linguist-language=c
 
+*.g4 linguist-language=c
+
+
+# ANTLR 100.0%
+
 
 *.tbox linguist-language=tbox
 *.c linguist-language=tbox
