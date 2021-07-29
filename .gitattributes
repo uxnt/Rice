@@ -1,12 +1,10 @@
-#* text=auto
-* text=c
-
-
-# *.tbox linguist-language=c
-# *.g4 linguist-language=c
+*.tbox linguist-language=c
+*.g4 linguist-language=c
 
 
 
+# * text=auto
+# * text=c
 # ANTLR 100.0%
 #  *.tbox linguist-language=tbox
 #  *.c linguist-language=tbox
