@@ -1,3 +1,8 @@
+* text=auto
+
+*.tbox linguist-language=c
+
+
 *.tbox linguist-language=tbox
 *.c linguist-language=tbox
 *.h linguist-language=tbox
