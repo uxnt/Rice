@@ -3,7 +3,7 @@
 *.java linguist-language=tbox
 
 
-* .tbox linguist-language = languages.yml
+#* .tbox linguist-language = languages.yml
 
 
 # * text=auto
