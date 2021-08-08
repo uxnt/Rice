@@ -7,6 +7,28 @@
 
 namespace tbox::language {
 
+class TBoxValue {
+public:
+    virtual llvm::Value* getValue() = 0;
+};
+
+class TBoxNormalValue {
+    llvm::Value* value;
+public:
+    TBoxNormalValue();
+    TBoxNormalValue(llvm::Value* value);
+    virtual llvm::Value* getValue();
+};
+
+class TBoxVariable : TBoxValue{
+    llvm::Value* address;
+public:
+    TBoxVariable();
+    TBoxVariable(llvm::Value* address);
+    virtual llvm::Value* getValue();
+    virtual llvm::Value* getAddress();
+};
+
 class VariableTableManager {
     std::map<std::string, llvm::AllocaInst*> variableTable;
     llvm::Function* function;
@@ -21,7 +43,7 @@ public:
 };
 
 class TBoxCodeGenerator {
-    std::unique_ptr<VariableTableManager> var_manager;
+    std::uptr<VariableTableManager> var_manager;
     std::map<llvm::GlobalVariable*, TBoxParser::ExprContext*> globalVariables;
     llvm::Module* curMod;
     llvm::BasicBlock* endBlock;
@@ -33,15 +55,15 @@ public:
 
     virtual llvm::Value* visitConstant(TBoxParser::ConstantContext *ctx);
 
-    virtual llvm::Value* visitPrimExpr(TBoxParser::PrimExprContext *ctx);
+    virtual std::uptr<TBoxValue> visitPrimExpr(TBoxParser::PrimExprContext *ctx);
 
-    virtual llvm::Value* visitPostExpr(TBoxParser::PostExprContext *ctx);
+    virtual std::uptr<TBoxValue> visitPostExpr(TBoxParser::PostExprContext *ctx);
 
     virtual llvm::Value* visitUnaryExpr(TBoxParser::UnaryExprContext *ctx);
 
     virtual llvm::Value* visitUnaryOp(TBoxParser::UnaryOpContext *ctx);
 
-    virtual llvm::Value* visitIncOrDecOp(TBoxParser::IncOrDecOpContext *ctx);
+    virtual std::function<llvm::Value*(llvm::Value*)> visitIncOrDecOp(TBoxParser::IncOrDecOpContext *ctx);
 
     virtual llvm::Value* visitCastExpr(TBoxParser::CastExprContext *ctx);
 

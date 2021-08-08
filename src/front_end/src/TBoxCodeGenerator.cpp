@@ -8,6 +8,31 @@ using namespace std;
 using namespace tbox::language;
 using namespace llvm;
 
+TBoxNormalValue::TBoxNormalValue() {
+}
+
+TBoxNormalValue::TBoxNormalValue(llvm::Value* value) : value(value){
+}
+
+llvm::Value* TBoxNormalValue::getValue() {
+    return value;
+}
+
+TBoxVariable::TBoxVariable() {
+}
+
+TBoxVariable::TBoxVariable(llvm::Value* address) : address(address){
+}
+
+llvm::Value* TBoxVariable::getValue() {
+    return Builder->CreateLoad(address, "load_tmp");
+}
+
+llvm::Value* TBoxVariable::getAddress() {
+    return address;
+}
+
+
 VariableTableManager::VariableTableManager(Function* func_ptr, llvm::Module* mod_ptr) : function(func_ptr), mod(mod_ptr) {
 }
 
@@ -91,23 +116,23 @@ Value* TBoxCodeGenerator::visitConstant(TBoxParser::ConstantContext *ctx) {
     return 0;
 }
 
-Value* TBoxCodeGenerator::visitPrimExpr(TBoxParser::PrimExprContext *ctx) {
+uptr<TBoxValue> TBoxCodeGenerator::visitPrimExpr(TBoxParser::PrimExprContext *ctx) {
     //TODO
     if (ctx->constant()) {
-        return visitConstant(ctx->constant());
+        return uptr<TBoxValue>((TBoxValue*)new TBoxNormalValue(visitConstant(ctx->constant())));
     }
     else if (ctx->Identifier()) {
-        return Builder->CreateLoad(var_manager->getVar(ctx->Identifier()->getText()), ctx->Identifier()->getText());
+        return uptr<TBoxValue>((TBoxValue*)new TBoxVariable(var_manager->getVar(ctx->Identifier()->getText())));
     }
     else if (ctx->expr()) {
-        return visitExpr(ctx->expr());
+        return uptr<TBoxValue>((TBoxValue*)new TBoxNormalValue(visitExpr(ctx->expr())));
     }
     return 0;
 }
 
-Value* TBoxCodeGenerator::visitPostExpr(TBoxParser::PostExprContext *ctx) {
+uptr<TBoxValue> TBoxCodeGenerator::visitPostExpr(TBoxParser::PostExprContext *ctx) {
     //TODO
-    if (ctx->primExpr() && ctx->postOp().size() == 0) {
+    if (ctx->postOp().size() == 0 && ctx->incOrDecOp().size() == 0) {
         return visitPrimExpr(ctx->primExpr());
     }
     for (auto op : ctx->postOp()) {
@@ -118,19 +143,26 @@ Value* TBoxCodeGenerator::visitPostExpr(TBoxParser::PostExprContext *ctx) {
             //function call
             auto args = visitArgs(op->args());
             string func_name = ctx->primExpr()->Identifier()->getText();
-            return Builder->CreateCall(curMod->getFunction(func_name), args, "__call_tmp_");
+            return uptr<TBoxValue>((TBoxValue*)new TBoxNormalValue(Builder->CreateCall(curMod->getFunction(func_name), args, "call_tmp")));
         }
         if (op->Dot()) {
             //object
         }
     }
-    return 0;
+    auto value = visitPrimExpr(ctx->primExpr())->getValue();
+    auto origin_value = visitPrimExpr(ctx->primExpr());
+    for (auto op : ctx->incOrDecOp()) {
+        value = visitIncOrDecOp(op)(value);
+    }
+    auto var = visitPrimExpr(ctx->primExpr());
+    Builder->CreateStore(var->getValue(), ((TBoxVariable*)var.get())->getAddress());
+    return origin_value;
 }
 
 Value* TBoxCodeGenerator::visitUnaryExpr(TBoxParser::UnaryExprContext *ctx) {
     //TODO
     if (ctx->postExpr()) {
-        return visitPostExpr(ctx->postExpr());
+        return visitPostExpr(ctx->postExpr())->getValue();
     }
     return 0;
 }
@@ -140,9 +172,15 @@ Value* TBoxCodeGenerator::visitUnaryOp(TBoxParser::UnaryOpContext *ctx) {
     return 0;
 }
 
-Value* TBoxCodeGenerator::visitIncOrDecOp(TBoxParser::IncOrDecOpContext *ctx) {
+function<Value*(Value*)> TBoxCodeGenerator::visitIncOrDecOp(TBoxParser::IncOrDecOpContext *ctx) {
     //TODO
-    return 0;
+    if (ctx->Increase()) {
+        return [](Value* o){return Builder->CreateAdd(o, ConstantInt::get(Type::getInt32Ty(*Context), APInt(32, 1)));};
+    }
+    else if (ctx->Decrease()) {
+        return [](Value* o){return Builder->CreateSub(o, ConstantInt::get(Type::getInt32Ty(*Context), APInt(32, 1)));};
+    }
+    return [](Value* o){return (Value*)0;};
 }
 
 Value* TBoxCodeGenerator::visitCastExpr(TBoxParser::CastExprContext *ctx) {
@@ -169,17 +207,17 @@ Value* TBoxCodeGenerator::visitMulExpr(TBoxParser::MulExprContext *ctx) {
 function<Value*(Value*, Value*)> TBoxCodeGenerator::visitMulOp(TBoxParser::MulOpContext *ctx) {
     if (ctx->Star()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateMul(l, r, "__mul_tmp_");
+            return Builder->CreateMul(l, r, "mul_tmp");
         };
     }
     else if (ctx->Div()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateSDiv(l, r, "__div_tmp_");
+            return Builder->CreateSDiv(l, r, "div_tmp");
         };
     }
     else if (ctx->Mod()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateSRem(l, r, "__mod_tmp_");
+            return Builder->CreateSRem(l, r, "mod_tmp");
         };
     }
     //TODO
@@ -200,12 +238,12 @@ function<Value*(Value*, Value*)> TBoxCodeGenerator::visitAddOp(TBoxParser::AddOp
     //TODO
     if (ctx->Plus()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateAdd(l, r, "__add_tmp_");
+            return Builder->CreateAdd(l, r, "add_tmp");
         };
     }
     else if (ctx->Minus()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateSub(l, r, "__sub_tmp_");
+            return Builder->CreateSub(l, r, "sub_tmp");
         };
     }
     return [](Value* l, Value* r){return (Value*)0;};
@@ -225,17 +263,17 @@ function<Value*(Value*, Value*)> TBoxCodeGenerator::visitShiftOp(TBoxParser::Shi
     //TODO
     if (ctx->LeftShift()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateShl(l, r, "__shl_tmp_");
+            return Builder->CreateShl(l, r, "shl_tmp");
         };
     }
     else if (ctx->ARightShift()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateAShr(l, r, "__ashr_tmp_");
+            return Builder->CreateAShr(l, r, "ashr_tmp");
         };
     }
     else if (ctx->LRightShift()) {
         return [](Value* l, Value* r) {
-            return Builder->CreateLShr(l, r, "__lshr_tmp_");
+            return Builder->CreateLShr(l, r, "lshr_tmp");
         };
     }
     return [](Value* l, Value* r){return (Value*)0;};
@@ -246,7 +284,7 @@ Value* TBoxCodeGenerator::visitCmpExpr(TBoxParser::CmpExprContext *ctx) {
     Value* left = visitShiftExpr(ctx->shiftExpr(0));
     for (int i = 0 ; i < ctx->cmpOp().size() ; i ++) {
         Value* right = visitShiftExpr(ctx->shiftExpr(i + 1));
-        left = Builder->CreateCmp(visitCmpOp(ctx->cmpOp(i)), left, right, "__cmp_tmp_");
+        left = Builder->CreateCmp(visitCmpOp(ctx->cmpOp(i)), left, right, "cmp_tmp");
     }
     return left;
 }
@@ -279,7 +317,7 @@ Value* TBoxCodeGenerator::visitAndExpr(TBoxParser::AndExprContext *ctx) {
     Value* left = visitCmpExpr(ctx->cmpExpr(0));
     for (int i = 0 ; i < ctx->And().size() ; i ++) {
         Value* right = visitCmpExpr(ctx->cmpExpr(i + 1));
-        left = Builder->CreateAnd(left, right, "__and_tmp_");
+        left = Builder->CreateAnd(left, right, "and_tmp");
     }
     return left;
 }
@@ -289,7 +327,7 @@ Value* TBoxCodeGenerator::visitXorExpr(TBoxParser::XorExprContext *ctx) {
     Value* left = visitAndExpr(ctx->andExpr(0));
     for (int i = 0 ; i < ctx->Xor().size() ; i ++) {
         Value* right = visitAndExpr(ctx->andExpr(i + 1));
-        left = Builder->CreateXor(left, right, "__xor_tmp_");
+        left = Builder->CreateXor(left, right, "xor_tmp");
     }
     return left;
 }
@@ -299,7 +337,7 @@ Value* TBoxCodeGenerator::visitOrExpr(TBoxParser::OrExprContext *ctx) {
     Value* left = visitXorExpr(ctx->xorExpr(0));
     for (int i = 0 ; i < ctx->Or().size() ; i ++) {
         Value* right = visitXorExpr(ctx->xorExpr(i + 1));
-        left = Builder->CreateOr(left, right, "__or_tmp_");
+        left = Builder->CreateOr(left, right, "or_tmp");
     }
     return left;
 }
@@ -316,7 +354,13 @@ Value* TBoxCodeGenerator::visitLogicOrExpr(TBoxParser::LogicOrExprContext *ctx) 
 
 Value* TBoxCodeGenerator::visitQuesExpr(TBoxParser::QuesExprContext *ctx) {
     //TODO
-    return visitLogicOrExpr(ctx->logicOrExpr());
+    Value* condition = visitLogicOrExpr(ctx->logicOrExpr());
+    if (ctx->expr()) {
+        Value* left = visitExpr(ctx->expr());
+        Value* right = visitQuesExpr(ctx->quesExpr());
+        return Builder->CreateSelect(condition, left, right, "ques_tmp");
+    }
+    return condition;
 }
 
 Value* TBoxCodeGenerator::visitAssignExpr(TBoxParser::AssignExprContext *ctx) {

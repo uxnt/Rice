@@ -47,7 +47,7 @@ bool Module2Obj(llvm::Module& mod, std::string output_file) {
     mod.print(output, &writer);
 
     //You should add the tools directory to the environment path
-    RunProgram("opt", output_file + ".tmp.ll -S -O2 -o " + output_file + ".tmp.ll");
+    // RunProgram("opt", output_file + ".tmp.ll -S -O2 -o " + output_file + ".tmp.ll");
     RunProgram("llvm-as", output_file + ".tmp.ll" + " -o " + output_file + ".tmp.bc");
     RunProgram("llc", output_file + ".tmp.bc -filetype=obj -O2 -o " + output_file);
     return true;
