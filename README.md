@@ -59,6 +59,8 @@
 # Tbox Language
 Tbox Language
 
+# MIT License
+```Copyright (c) 2021 Tbox Studio```
 
 ---
 ## Tbox 你好T型箱子
