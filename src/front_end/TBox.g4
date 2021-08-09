@@ -1,7 +1,7 @@
 grammar TBox;
 
 options {
-    language = Java;
+    language = Cpp;
 }
 
 //Ignores
@@ -14,6 +14,7 @@ Import: 'import';
 Export: 'export';
 Of: 'of';
 Static: 'static';
+Extern: 'extern';
 
 True: 'true';
 False: 'false';
@@ -72,7 +73,8 @@ LeftBrace: '{';
 RightBrace: '}';
 
 LeftShift : '<<';
-RightShift : '>>';
+ARightShift : '>>';
+LRightShift : '>>>';
 Plus : '+';
 Increase : '++';
 Minus : '-';
@@ -95,7 +97,8 @@ ModAssign : '%=';
 PlusAssign : '+=';
 MinusAssign : '-=';
 LeftShiftAssign : '<<=';
-RightShiftAssign : '>>=';
+ARightShiftAssign : '>>=';
+LRightShiftAssign : '>>>=';
 AndAssign : '&=';
 XorAssign : '^=';
 OrAssign : '|=';
@@ -114,69 +117,92 @@ Ellipsis : '...';
 Dollar: '$';
 
 //Constants
-BinNum: '1'([0-1])*'b';
-OctNum: '0'([1-7])([0-7])*;
-DecNum: ([1-9])([0-9])* | '0';
-HexNum: '0x'([1-9]|[A-F]|[a-f])([0-9]|[A-F]|[a-f])*;
+BinNum: '-'?'1'([0-1])*'b';
+OctNum: '-'?'0'([1-7])([0-7])*;
+DecNum: '-'?([1-9])([0-9])* | '0';
+HexNum: '-'?'0x'([1-9]|[A-F]|[a-f])([0-9]|[A-F]|[a-f])*;
+FloatNum: '-'?([1-9])([0-9])*'.'([0-9])*;
 Identifier: ([a-z]|[A-Z]|'_')([0-9]|[a-z]|[A-Z]|'_')*;
 StringConstant: '"'.*?'"';
 
 //Grammars
 
-num: BinNum | OctNum | DecNum | HexNum;
+num: BinNum | OctNum | DecNum | HexNum | FloatNum;
 constant: StringConstant | num;
 
 primExpr
     : constant
-    | library
+    | Identifier
     | '('expr')'
     ;
 
 postExpr
     : primExpr
-        ( '['expr']'
-        | '('args')'
-        | ('.') library
-        | ('++'|'--')
-        )*
+        (postOp)*
+        (incOrDecOp)*
+    ;
+
+postOp
+    : '['expr']'
+    | '('args')'
+    | ('.') Identifier
     ;
 
 unaryExpr
     :
-    ('++' | '--')*
+    (incOrDecOp)*
     ( postExpr
-    | ('&'|'~'|'!') castExpr
-    | '&&' library // GCC extension address of label
+    | unaryOp castExpr
     )
     ;
-    
+
+unaryOp
+    : '-'|'~'|'!'
+    ;
+
+incOrDecOp
+    : '++' | '--'
+    ;
+
 castExpr
     : unaryExpr
     | num
     ;
 
 mulExpr
-    : castExpr (('*'|'/'|'%') castExpr)*
+    : castExpr (mulOp castExpr)*
+    ;
+
+mulOp
+    : '*' | '/' | '%'
     ;
 
 addExpr
-    : mulExpr (('+'|'-') mulExpr)*
+    : mulExpr (addOp mulExpr)*
+    ;
+
+addOp
+    : '+' | '-'
     ;
 
 shiftExpr
-    : addExpr (('<<'|'>>') addExpr)*
+    : addExpr (shiftOp addExpr)*
     ;
 
-relatExpr
-    : shiftExpr (('<'|'>'|'<='|'>=') shiftExpr)*
+shiftOp
+    : '<<' | '>>' | '>>>'
     ;
 
-equExpr
-    : relatExpr (('=='| '!=') relatExpr)*
+cmpExpr
+    : shiftExpr (cmpOp shiftExpr)*
+    ;
+
+cmpOp
+    : '<'|'>'|'<='|'>='|'=='|'!='
     ;
 
 andExpr
-    : equExpr ( '&' equExpr)*
+    : cmpExpr ( '&' cmpExpr)*
     ;
 
 xorExpr
@@ -202,8 +228,12 @@ quesExpr
 
 assignExpr
     : constant
-    | unaryExpr ('='|'*='|'/='|'%='|'+='|'-='|'<<='|'>>='|'&='|'^='|'|=') assignExpr
+    | postExpr assignOp assignExpr
     | quesExpr
+    ;
+
+assignOp
+    : '='|'*='|'/='|'%='|'+='|'-='|'<<='|'>>='|'&='|'^='|'|='|'>>>='
     ;
 
 args
@@ -211,12 +241,11 @@ args
     ;
 
 expr
-    : assignExpr(','assignExpr)*
+    : assignExpr
     ;
 
 library
-    : library'.'Identifier
-    | Identifier
+    : Identifier('.'Identifier)*
     ;
 
 importStmt
@@ -256,32 +285,42 @@ stmt
     | forStmt
     | whileStmt
     | doWhileStmt
+    | breakStmt
     ;
 
 returnStmt
-    : 'return' expr ';'
+    : 'return' expr? ';'
     ;
 
 defVarStmt
     : type Identifier('='expr)?';'
     ;
 
+stmtBody
+    :'{' program '}'
+    | stmt
+    ;
+
 ifStmt
-    : 'if' '(' logicOrExpr ')' (('{' program '}') | stmt)
-    ('elif' '(' logicOrExpr ')' (('{' program '}') | stmt))*
-    ('else' (('{' program '}') | stmt))?
+    : 'if' '(' logicOrExpr ')' stmtBody
+    ('elif' '(' logicOrExpr ')' stmtBody)*
+    ('else' stmtBody)?
     ;
 
 forStmt
-    : 'for' '(' stmt logicOrExpr ';' expr ')' (('{' program '}') | stmt)
+    : 'for' '(' stmt logicOrExpr ';' expr ')' stmtBody
     ;
 
 whileStmt
-    : 'while' '('logicOrExpr')' (('{' program '}') | stmt)
+    : 'while' '('logicOrExpr')' stmtBody
     ;
 
 doWhileStmt
     : 'do' '{' program '}' 'while' '('logicOrExpr')'';'
+    ;
+
+breakStmt
+    : 'break'';'
     ;
 
 defFuncStmt
@@ -292,6 +331,16 @@ defGlobalVarStmt
     : 'export'? defVarStmt
     ;
 
+externFuncStmt
+    : 'extern' 'func' Identifier '('argsNeed')' (':'type)';'
+    ;
+
 stat
-    : importStmt*defGlobalVarStmt*defFuncStmt*
+    : importStmt*statStmts*
+    ;
+
+statStmts
+    : defGlobalVarStmt
+    | defFuncStmt
+    | externFuncStmt
     ;
