@@ -1,4 +1,4 @@
-TBOX := ../compiler/tbox
+TBOX := tbox
 CLANG := clang
 
 .PHONY: build

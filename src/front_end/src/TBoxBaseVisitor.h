@@ -109,6 +109,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitSigmaExpr(TBoxParser::SigmaExprContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitAssignExpr(TBoxParser::AssignExprContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -178,6 +182,10 @@ public:
   }
 
   virtual antlrcpp::Any visitBreakStmt(TBoxParser::BreakStmtContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitContinueStmt(TBoxParser::ContinueStmtContext *ctx) override {
     return visitChildren(ctx);
   }
 

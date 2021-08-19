@@ -66,6 +66,8 @@ public:
 
     virtual antlrcpp::Any visitQuesExpr(TBoxParser::QuesExprContext *context) = 0;
 
+    virtual antlrcpp::Any visitSigmaExpr(TBoxParser::SigmaExprContext *context) = 0;
+
     virtual antlrcpp::Any visitAssignExpr(TBoxParser::AssignExprContext *context) = 0;
 
     virtual antlrcpp::Any visitAssignOp(TBoxParser::AssignOpContext *context) = 0;
@@ -101,6 +103,8 @@ public:
     virtual antlrcpp::Any visitDoWhileStmt(TBoxParser::DoWhileStmtContext *context) = 0;
 
     virtual antlrcpp::Any visitBreakStmt(TBoxParser::BreakStmtContext *context) = 0;
+
+    virtual antlrcpp::Any visitContinueStmt(TBoxParser::ContinueStmtContext *context) = 0;
 
     virtual antlrcpp::Any visitDefFuncStmt(TBoxParser::DefFuncStmtContext *context) = 0;
 

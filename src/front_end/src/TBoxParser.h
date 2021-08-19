@@ -15,23 +15,24 @@ public:
   enum {
     T__0 = 1, WS = 2, LineComment = 3, BlockComment = 4, Import = 5, Export = 6, 
     Of = 7, Static = 8, Extern = 9, True = 10, False = 11, Null = 12, Func = 13, 
-    Class = 14, Struct = 15, Enum = 16, Interface = 17, Abstract = 18, Override = 19, 
-    Public = 20, Protected = 21, Private = 22, Internal = 23, Friendly = 24, 
-    Friend = 25, If = 26, Else = 27, Elif = 28, Switch = 29, For = 30, Foreach = 31, 
-    While = 32, Do = 33, Break = 34, Return = 35, Num = 36, Byte = 37, Short = 38, 
-    Int = 39, Long = 40, Float = 41, Double = 42, Bool = 43, String = 44, 
-    Char = 45, Var = 46, Comma = 47, Question = 48, SemiColon = 49, Colon = 50, 
-    LeftParen = 51, RightParen = 52, LeftBracket = 53, RightBracket = 54, 
-    LeftBrace = 55, RightBrace = 56, LeftShift = 57, ARightShift = 58, LRightShift = 59, 
-    Plus = 60, Increase = 61, Minus = 62, Decrease = 63, Star = 64, Div = 65, 
-    Mod = 66, And = 67, LogicAnd = 68, Or = 69, LogicOr = 70, Xor = 71, 
-    Not = 72, Tilde = 73, Assign = 74, MulAssign = 75, DivAssign = 76, ModAssign = 77, 
-    PlusAssign = 78, MinusAssign = 79, LeftShiftAssign = 80, ARightShiftAssign = 81, 
-    LRightShiftAssign = 82, AndAssign = 83, XorAssign = 84, OrAssign = 85, 
-    Less = 86, LessEqual = 87, Greater = 88, GreaterEqual = 89, Equal = 90, 
-    NotEqual = 91, Arrow = 92, Dot = 93, Ellipsis = 94, Dollar = 95, BinNum = 96, 
-    OctNum = 97, DecNum = 98, HexNum = 99, FloatNum = 100, Identifier = 101, 
-    StringConstant = 102
+    Class = 14, Struct = 15, Enum = 16, Interface = 17, Template = 18, Abstract = 19, 
+    Override = 20, Public = 21, Protected = 22, Private = 23, Internal = 24, 
+    Friendly = 25, Friend = 26, If = 27, Else = 28, Elif = 29, Switch = 30, 
+    For = 31, Foreach = 32, While = 33, Do = 34, Break = 35, Continue = 36, 
+    Return = 37, Yield = 38, Num = 39, Byte = 40, Short = 41, Int = 42, 
+    Long = 43, Float = 44, Double = 45, Bool = 46, String = 47, Char = 48, 
+    Var = 49, Point = 50, Function = 51, Reference = 52, Object = 53, Comma = 54, 
+    Question = 55, SemiColon = 56, Colon = 57, LeftParen = 58, RightParen = 59, 
+    LeftBracket = 60, RightBracket = 61, LeftBrace = 62, RightBrace = 63, 
+    LeftShift = 64, ARightShift = 65, LRightShift = 66, Plus = 67, Increase = 68, 
+    Minus = 69, Decrease = 70, Star = 71, Div = 72, Mod = 73, And = 74, 
+    LogicAnd = 75, Or = 76, LogicOr = 77, Xor = 78, Not = 79, Tilde = 80, 
+    Assign = 81, MulAssign = 82, DivAssign = 83, ModAssign = 84, PlusAssign = 85, 
+    MinusAssign = 86, LeftShiftAssign = 87, ARightShiftAssign = 88, LRightShiftAssign = 89, 
+    AndAssign = 90, XorAssign = 91, OrAssign = 92, Less = 93, LessEqual = 94, 
+    Greater = 95, GreaterEqual = 96, Equal = 97, NotEqual = 98, Arrow = 99, 
+    Dot = 100, Ellipsis = 101, Dollar = 102, BinNum = 103, OctNum = 104, 
+    DecNum = 105, HexNum = 106, FloatNum = 107, Identifier = 108, StringConstant = 109
   };
 
   enum {
@@ -40,12 +41,13 @@ public:
     RuleMulExpr = 9, RuleMulOp = 10, RuleAddExpr = 11, RuleAddOp = 12, RuleShiftExpr = 13, 
     RuleShiftOp = 14, RuleCmpExpr = 15, RuleCmpOp = 16, RuleAndExpr = 17, 
     RuleXorExpr = 18, RuleOrExpr = 19, RuleLogicAndExpr = 20, RuleLogicOrExpr = 21, 
-    RuleQuesExpr = 22, RuleAssignExpr = 23, RuleAssignOp = 24, RuleArgs = 25, 
-    RuleExpr = 26, RuleLibrary = 27, RuleImportStmt = 28, RuleType = 29, 
-    RuleArgsNeed = 30, RuleProgram = 31, RuleStmt = 32, RuleReturnStmt = 33, 
-    RuleDefVarStmt = 34, RuleStmtBody = 35, RuleIfStmt = 36, RuleForStmt = 37, 
-    RuleWhileStmt = 38, RuleDoWhileStmt = 39, RuleBreakStmt = 40, RuleDefFuncStmt = 41, 
-    RuleDefGlobalVarStmt = 42, RuleExternFuncStmt = 43, RuleStat = 44, RuleStatStmts = 45
+    RuleQuesExpr = 22, RuleSigmaExpr = 23, RuleAssignExpr = 24, RuleAssignOp = 25, 
+    RuleArgs = 26, RuleExpr = 27, RuleLibrary = 28, RuleImportStmt = 29, 
+    RuleType = 30, RuleArgsNeed = 31, RuleProgram = 32, RuleStmt = 33, RuleReturnStmt = 34, 
+    RuleDefVarStmt = 35, RuleStmtBody = 36, RuleIfStmt = 37, RuleForStmt = 38, 
+    RuleWhileStmt = 39, RuleDoWhileStmt = 40, RuleBreakStmt = 41, RuleContinueStmt = 42, 
+    RuleDefFuncStmt = 43, RuleDefGlobalVarStmt = 44, RuleExternFuncStmt = 45, 
+    RuleStat = 46, RuleStatStmts = 47
   };
 
   TBoxParser(antlr4::TokenStream *input);
@@ -81,6 +83,7 @@ public:
   class LogicAndExprContext;
   class LogicOrExprContext;
   class QuesExprContext;
+  class SigmaExprContext;
   class AssignExprContext;
   class AssignOpContext;
   class ArgsContext;
@@ -99,6 +102,7 @@ public:
   class WhileStmtContext;
   class DoWhileStmtContext;
   class BreakStmtContext;
+  class ContinueStmtContext;
   class DefFuncStmtContext;
   class DefGlobalVarStmtContext;
   class ExternFuncStmtContext;
@@ -473,6 +477,18 @@ public:
 
   QuesExprContext* quesExpr();
 
+  class  SigmaExprContext : public antlr4::ParserRuleContext {
+  public:
+    SigmaExprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SigmaExprContext* sigmaExpr();
+
   class  AssignExprContext : public antlr4::ParserRuleContext {
   public:
     AssignExprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -589,8 +605,14 @@ public:
     antlr4::tree::TerminalNode *Double();
     antlr4::tree::TerminalNode *Char();
     antlr4::tree::TerminalNode *Var();
+    antlr4::tree::TerminalNode *Point();
+    antlr4::tree::TerminalNode *Function();
+    antlr4::tree::TerminalNode *LeftParen();
+    antlr4::tree::TerminalNode *RightParen();
+    antlr4::tree::TerminalNode *Colon();
+    std::vector<TypeContext *> type();
+    TypeContext* type(size_t i);
     LibraryContext *library();
-    TypeContext *type();
 
 
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -644,6 +666,7 @@ public:
     WhileStmtContext *whileStmt();
     DoWhileStmtContext *doWhileStmt();
     BreakStmtContext *breakStmt();
+    ContinueStmtContext *continueStmt();
 
 
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -795,6 +818,20 @@ public:
   };
 
   BreakStmtContext* breakStmt();
+
+  class  ContinueStmtContext : public antlr4::ParserRuleContext {
+  public:
+    ContinueStmtContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *Continue();
+    antlr4::tree::TerminalNode *SemiColon();
+
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  ContinueStmtContext* continueStmt();
 
   class  DefFuncStmtContext : public antlr4::ParserRuleContext {
   public:
