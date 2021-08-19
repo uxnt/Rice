@@ -1,4 +1,8 @@
 func main():num {
-    int a = 2;
-    return a;
+    int i = 0;
+    do {
+        i++;
+    }
+    while (i < 2);
+    return 0;
 }

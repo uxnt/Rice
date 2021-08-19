@@ -36,6 +36,7 @@
 #include "TBoxProccessCreator.h"
 
 #define uptr unique_ptr
+#define mku make_unqiue
 
 extern std::shared_ptr<llvm::LLVMContext> Context;
 extern llvm::IRBuilder<>* Builder;

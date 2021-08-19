@@ -25,6 +25,7 @@ Class: 'class';
 Struct: 'struct';
 Enum: 'enum';
 Interface: 'interface';
+Template: 'template';
 
 Abstract: 'abstract';
 Override: 'override';
@@ -45,7 +46,9 @@ Foreach: 'foreach';
 While: 'while';
 Do: 'do';
 Break: 'break';
+Continue: 'continue';
 Return: 'return';
+Yield: 'yield';
 
 //Native Types
 Num: 'num';
@@ -59,6 +62,10 @@ Bool: 'bool';
 String: 'string';
 Char: 'char';
 Var: 'var';
+Point: 'point';
+Function: 'function';
+Reference: 'reference';
+Object: 'object';
 
 //Symbols
 Comma: ',';
@@ -221,9 +228,12 @@ logicOrExpr
     : logicAndExpr ( '||' logicAndExpr)*
     ;
 
-
 quesExpr
     : logicOrExpr ('?' expr ':' quesExpr)?
+    ;
+
+sigmaExpr
+    :
     ;
 
 assignExpr
@@ -253,17 +263,19 @@ importStmt
     ;
 
 type
-    : Num
-    | Byte
-    | Short
-    | Int
-    | Long
-    | Bool
-    | String
-    | Float
-    | Double
-    | Char
-    | Var
+    : 'num'
+    | 'byte'
+    | 'short'
+    | 'int'
+    | 'long'
+    | 'bool'
+    | 'string'
+    | 'float'
+    | 'double'
+    | 'char'
+    | 'var'
+    | 'point'
+    | 'function''('type*')'':'type
     | library
     | type'[]'
     ;
@@ -286,6 +298,7 @@ stmt
     | whileStmt
     | doWhileStmt
     | breakStmt
+    | continueStmt
     ;
 
 returnStmt
@@ -321,6 +334,10 @@ doWhileStmt
 
 breakStmt
     : 'break'';'
+    ;
+
+continueStmt
+    : 'continue'';'
     ;
 
 defFuncStmt
