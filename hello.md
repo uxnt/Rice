@@ -90,10 +90,9 @@ null|空|√
 if|如果|√
 elif|如果否则|√
 else|否则|√
-for|循环|√
-while|循环|√
+for|循环/计数循环|√
+while|循环/计数循环|√
 break|循环结束|√
-for|计数循环|√
 return|返回|√
 
 
