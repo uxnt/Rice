@@ -64,7 +64,7 @@ Tbox Language
 
 ---
 
-## Tbox 你好T型箱子
+## Tbox 你好磁箱
 
 [Tbox-Hello](hello.md)
 
