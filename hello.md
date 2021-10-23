@@ -29,7 +29,6 @@ func main() {
 ```
 Well done!
 ```
----
 
 
 ---
@@ -101,7 +100,7 @@ return|返回|√
 
 ---
 
-|num(int的别称)|
+|num(自动的别称)|
 |-|
 |bool|
 |int|
