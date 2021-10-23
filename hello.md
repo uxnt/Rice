@@ -102,9 +102,9 @@ return|返回|√
 
 |num(自动的别称)|
 |-|
-|int|
-|double|
-|float|
+|int（整型） |
+|double（双精度浮点型）|
+|float（浮点型）|
 
 
 
