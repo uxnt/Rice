@@ -12,7 +12,8 @@ func main() {
 ```
 6
 ```
----
+
+
 ## Tbox 判断
 ```tbox
 import tbox.console;
@@ -31,7 +32,6 @@ Well done!
 ```
 
 
----
 ## Tbox 字符串
 ```tbox
 import tbox.console;
