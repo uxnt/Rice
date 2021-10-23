@@ -83,7 +83,8 @@ export|导出|？×
 
 
 
----
+
+
 ## Tbox 你好磁箱
 ```tbox
 import tbox.console
@@ -96,7 +97,8 @@ func main() {
 ```
 Hello, Tbox
 ```
-----
+
+
 ## Tbox 算法
 ```javascript
 import tbox.console
@@ -113,7 +115,7 @@ func main() {
 2.5
 ```
 
-----
+
 ## Tbox 你好算法
 ```javascript
 import tbox.console
