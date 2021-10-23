@@ -80,6 +80,7 @@ func main(){
 -|-|-
 import|导入|√
 static|静态|√
+
 num|数（整型/浮点型/双精度浮点型） |√
 string|字符串|√
 func|函数|√
