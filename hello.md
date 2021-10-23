@@ -103,7 +103,6 @@ return|返回|√
 |num(自动的别称)|
 |-|
 |int|
-|long|
 |double|
 |float|
 
