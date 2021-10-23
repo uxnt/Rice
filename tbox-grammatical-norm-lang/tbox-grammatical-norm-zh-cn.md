@@ -1,7 +1,7 @@
 # Tbox 语法规范
 
 ## Tbox 是什么
-Tbox 是T型箱子编程语言，已经现代化，有的人人都能做写，有的人人都可以写作，有的人人都可以从零开始写程序，
+Tbox 是磁箱编程语言，已经现代化，有的人人都能做写，有的人人都可以写作，有的人人都可以从零开始写程序，
 
 有的面向对象编程的，有的面向现代编程的，有的面向跨平台编程。
 
@@ -43,48 +43,48 @@ Tbox 中主要有如下几种类型的变量
 数组是储存在堆上的对象，可以保存多个同类型变量。
 
 
+
+
 ## Tbox 关键字
 
-关键字|说明
--|-
-import|导入
-num|数
-string|字符串
-func|函数
-true|真的
-false|假的
-null|空
-if|如果
-elif|如果否则
-else|否则
-for|循环
-while|循环
-break|循环结束
-for|计数循环
-return|返回值
-
----
-
-|num：|
-|-|
-|bool|
-|int|
-|long|
-|double|
-|float|
+关键字|说明|支持
+-|-|-
+import|导入|√
+0 |  | 
+static|静态|√
+0 |  | 
+num|自动数的别称（int 整型/float 浮点型/double 双精度浮点型） |√
+string|字符串|√
+func|函数|√
+bool|逻辑|√
+true|真(1)|√
+false|假(0)|√
+null|空|√
+return|返回|√
+0 |  | 
+if|如果|√
+elif|如果否则|√
+else|否则|√
+0 |  | 
+for|循环/计数循环|√
+while|循环/计数循环|√
+break|循环结束|√
+0 |  | 
 
 
+## Tbox 版本 0.0.1 关键字
 
-
-
-
+关键字|说明|支持
+-|-|-
+of|取模块内容|？×
+export|导出|？×
 
 
 
 
 
 ---
-## Tbox 你好T型箱子
+## Tbox 你好磁箱
 ```tbox
 import tbox.console
 func main() {
@@ -112,6 +112,7 @@ func main() {
 2
 2.5
 ```
+
 ----
 ## Tbox 你好算法
 ```javascript
