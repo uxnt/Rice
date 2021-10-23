@@ -74,3 +74,9 @@ func main() {
 ```
 Hello, Tbox
 ```
+
+## Tbox 编译器生成EXE文件
+
+```bat
+tbox hello.tbox -o hello.exe
+```
