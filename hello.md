@@ -79,8 +79,8 @@ func main(){
 关键字|说明|支持
 -|-|-
 import|导入|√
-of|取模块内容|？
-export|导出|？
+of|取模块内容|？×
+export|导出|？×
 static|静态|?
 num|数|√
 string|字符串|√
@@ -102,7 +102,6 @@ return|返回|√
 
 |num(自动的别称)|
 |-|
-|bool|
 |int|
 |long|
 |double|
