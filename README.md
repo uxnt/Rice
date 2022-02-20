@@ -1,7 +1,7 @@
 <div align="center">
 
   <a href="https://github.com/tbox-studio/tbox-language">
-    <img width="600" heigth="215" src="https://github.com/tbox-studio/tbox-language/blob/main/tbox-logo-600x215.png">
+    <img width="460" heigth="75" src="https://github.com/tbox-studio/tbox-language/blob/main/tbox-logo-600x215.png">
   </a>
 
   <div>
