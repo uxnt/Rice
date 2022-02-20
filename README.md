@@ -46,14 +46,13 @@
 	  -->
   </div>
   <p>Tbox编程语言</p>
+	
+[简体中文](tbox-grammatical-norm-lang/tbox-grammatical-norm-zh-cn.md) • [English](tbox-grammatical-norm-lang/tbox-grammatical-norm-en-us.md)
+	
 </div>
 
 
-[简体中文](tbox-grammatical-norm-lang/tbox-grammatical-norm-zh-cn.md)
 
-
-
-[English](tbox-grammatical-norm-lang/tbox-grammatical-norm-en-us.md)
 
 
 # Tbox Language
