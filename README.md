@@ -1,9 +1,11 @@
 <div align="center">
-
-  <a href="https://github.com/tbox-studio/tbox-language">
-    <img src="https://github.com/tbox-studio/tbox-language/blob/main/tbox-logo-600x215.png" height="120" >
-  </a>
-
+	<h1>
+	<a href="https://github.com/tbox-studio/tbox-language">
+	<img src="https://github.com/tbox-studio/tbox-language/blob/main/tbox-logo-600x215.png" height="120" >
+	</a>
+	</h1>
+	<h4>Tbox编程语言</h4>
+	
   <div>
 	<!--
     <a href="https://github.com/tbox-studio/tbox-language/actions?query=workflow%3AWindows">
@@ -45,7 +47,7 @@
     </a>  
 	  -->
   </div>
-  <p>Tbox编程语言</p>
+	
 	
 [简体中文](tbox-grammatical-norm-lang/tbox-grammatical-norm-zh-cn.md) • [English](tbox-grammatical-norm-lang/tbox-grammatical-norm-en-us.md)
 	
