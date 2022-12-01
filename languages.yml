@@ -1,12 +1,12 @@
-Tbox:
+NeonLang:
   type: programming
   color: "#4b6df3"
   extensions:
-  - ".tbox"
+  - ".nl"
   interpreters:
-  - tbox
-  tm_scope: source.tbox
-  ace_mode: tbox
+  - NeonLang
+  tm_scope: source.nl
+  ace_mode: NeonLang
   codemirror_mode: clike
-  codemirror_mime_type: text/x-tboxsrc
+  codemirror_mime_type: text/x-neonlangsrc
   language_id: 612
