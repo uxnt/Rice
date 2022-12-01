@@ -73,7 +73,7 @@ Neon Language
 [Neon-Hello](hello.md)
 
 ```Neon
-import tbox.console;
+import Neon.console;
 func main() {
 	print("Hello, Neon");
 }
