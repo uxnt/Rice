@@ -68,14 +68,14 @@ Neon Language
 
 ---
 
-## Neon 你好磁箱
+## Neon 你好霓虹
 
 [Neon-Hello](hello.md)
 
 ```Neon
 import tbox.console;
 func main() {
-	print("Hello, Tbox");
+	print("Hello, Neon");
 }
 ```
 打印输出：
