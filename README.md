@@ -4,7 +4,7 @@
 	<img src="https://github.com/tbox-studio/tbox-language/blob/main/tbox-logo-600x215.png" height="120" >
 	</a>
 	</h1>
-	<h4>Tbox编程语言</h4>
+	<h4>Neon编程语言</h4>
 	
   <div>
 	<!--
@@ -57,22 +57,22 @@
 
 
 
-# Tbox Language
+# Neon Language
 
 [![Join the chat at https://gitter.im/tbox-studio/tbox](https://badges.gitter.im/tbox-studio/tbox.svg)](https://gitter.im/tbox-studio/tbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Tbox Language
+Neon Language
 
 # MIT License
-```Copyright (c) 2021 Tbox Studio```
+```Copyright (c) 2021 NeonCT, UXNT, neon```
 
 ---
 
-## Tbox 你好磁箱
+## Neon 你好磁箱
 
-[Tbox-Hello](hello.md)
+[Neon-Hello](hello.md)
 
-```tbox
+```Neon
 import tbox.console;
 func main() {
 	print("Hello, Tbox");
@@ -84,8 +84,8 @@ func main() {
 Hello, Tbox
 ```
 
-## Tbox 编译器生成EXE文件
+## Neon 编译器生成EXE文件
 
 ```bat
-tbox hello.tbox -o hello.exe
+neon hello.tbox -o hello.exe
 ```
