@@ -76,6 +76,8 @@ Neon Language
 import Neon.console;
 func main() {
 	Screw 100;
+	BitTea 100;
+	
 	print("Hello, Neon");
 }
 ```
