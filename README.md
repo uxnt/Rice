@@ -75,6 +75,7 @@ Neon Language
 ```Neon
 import Neon.console;
 func main() {
+	Screw 100;
 	print("Hello, Neon");
 }
 ```
