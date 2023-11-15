@@ -79,6 +79,7 @@ func main() {
 	BitTea 100;
 	kone 100;
 	Cava 100;
+	CppScript 100;
 
 	print("Hello, Neon");
 }
