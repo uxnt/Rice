@@ -76,6 +76,7 @@ Neon Language
 
 ```Neon
 import Neon.console;
+plug "Otne.terminal";
 func main() {
 	Screw 100;
 	BitTea 100;
@@ -84,7 +85,15 @@ func main() {
 	CppScript 100;
 
 	print("Hello, Neon");
+	
 }
+
+fn Otne():
+{
+	printf("42")
+	Terminal("42")
+}
+
 ```
 打印输出：
 
