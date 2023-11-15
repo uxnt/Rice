@@ -77,7 +77,9 @@ import Neon.console;
 func main() {
 	Screw 100;
 	BitTea 100;
-	
+	kone 100;
+	Cava 100;
+
 	print("Hello, Neon");
 }
 ```
