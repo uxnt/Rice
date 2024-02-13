@@ -73,13 +73,13 @@ Neon Language
 ```Neon
 import Neon.console;
 import "Otne.terminal";
-func main() {
+func main () {
+
 	Screw 100;
 	BitTea 100;
 	kone 100;
 	Cava 100;
 	CppScript 100;
-
 	print("Hello, Neon");
 	
 }
