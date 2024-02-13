@@ -54,14 +54,11 @@
 </div>
 
 
-NaxeLamp 编程语言是一门开源的编程语言，由 Uxnt 开发。
-
-
-
+NaxeLamp 编程语言是一门开源的编程语言，第一次Neon开发改进，由 Uxnt 开发。
 
 # NaxeLamp 0.0.1
 
-## Neon 你好霓虹 NaxeLamp 你好，紫霓虹灯
+## NaxeLamp 你好，紫霓虹灯
 
 [NaxeHello.nl](hello.md)
 
