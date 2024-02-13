@@ -68,13 +68,13 @@ Neon Language
 
 ## Neon 你好霓虹
 
-[NaxeHello](hello.md)
+[NaxeHello.ne](hello.md)
 
 ```Neon
 import Neon.console;
 import "Otne.terminal";
 
-type Neon-Hello
+type NaxeHello
 {
 	fn type main () ~
 	{
