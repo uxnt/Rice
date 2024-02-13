@@ -4,9 +4,9 @@ NeonLang:
   extensions:
   - ".nl"
   interpreters:
-  - NeonLang
+  - NaxeLamp
   tm_scope: source.nl
-  ace_mode: NeonLang
+  ace_mode: NaxeLamp
   codemirror_mode: clike
-  codemirror_mime_type: text/x-neonlangsrc
+  codemirror_mime_type: text/x-NaxeLampsrc
   language_id: 612
