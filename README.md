@@ -73,21 +73,27 @@ Neon Language
 ```Neon
 import Neon.console;
 import "Otne.terminal";
-fn type main () ~
+
+type Neon-Hello
 {
-	Screw 100
-	BitTea 100
-	kone 100
-	Cava 100
-	CppScript 100
-	print("Hello, Neon")
+	fn type main () ~
+	{
+		Screw 100
+		BitTea 100
+		kone 100
+		Cava 100
+		CppScript 100
+		print("Hello, Neon")
+	}
+	
+	fn Otne() ~
+	{
+		printf("42")
+		Terminal("42")
+	}
 }
 
-fn Otne() ~
-{
-	printf("42")
-	Terminal("42")
-}
+
 
 ```
 打印输出：
