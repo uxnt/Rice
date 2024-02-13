@@ -59,16 +59,12 @@ Neon Language 编程语言是一门开源的编程语言，由 Uxnt 开发。
 
 
 
-# Neon Language
+# Neon 0.0.1
 
 [![Join the chat at https://gitter.im/tbox-studio/tbox](https://badges.gitter.im/tbox-studio/tbox.svg)](https://gitter.im/tbox-studio/tbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Neon Language
 
-# MIT License
-```Copyright (c) 2021 NeonCT, UXNT, neon```
-
----
 
 ## Neon 你好霓虹
 
@@ -76,7 +72,7 @@ Neon Language
 
 ```Neon
 import Neon.console;
-plug "Otne.terminal";
+import "Otne.terminal";
 func main() {
 	Screw 100;
 	BitTea 100;
@@ -104,5 +100,5 @@ Hello, Tbox
 ## Neon 编译器生成EXE文件
 
 ```bat
-neon hello.tbox -o hello.exe
+neon hello.np -o hello.exe
 ```
