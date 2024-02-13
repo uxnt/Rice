@@ -81,10 +81,9 @@ func main () ~
 	Cava 100
 	CppScript 100
 	print("Hello, Neon")
-	
 }
 
-fn Otne():
+fn Otne() ~
 {
 	printf("42")
 	Terminal("42")
