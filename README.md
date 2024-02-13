@@ -61,9 +61,6 @@ NaxeLamp 编程语言是一门开源的编程语言，由 Uxnt 开发。
 
 # NaxeLamp 0.0.1
 
-[![Join the chat at https://gitter.im/tbox-studio/tbox](https://badges.gitter.im/tbox-studio/tbox.svg)](https://gitter.im/tbox-studio/tbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
 ## Neon 你好霓虹 NaxeLamp
 
 [NaxeHello.nl](hello.md)
