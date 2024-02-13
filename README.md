@@ -4,7 +4,7 @@
 	<img src="https://github.com/uxnt/NeonLang/blob/main/NeonCT.png" height="120" >
 	</a>
 	</h1>
-	<h4>Neon编程语言</h4>
+	<h4>NaxeLamp 编程语言</h4>
 	
   <div>
 	<!--
@@ -63,8 +63,6 @@ NaxeLamp 编程语言是一门开源的编程语言，由 Uxnt 开发。
 
 [![Join the chat at https://gitter.im/tbox-studio/tbox](https://badges.gitter.im/tbox-studio/tbox.svg)](https://gitter.im/tbox-studio/tbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Neon Language
-
 
 ## Neon 你好霓虹 NaxeLamp
 
@@ -84,7 +82,7 @@ type NaxeHello
 		kone 100
 		Cava 100
 		CppScript 100
-		print("Hello, Neon")
+		print("Hello, NaxeLamp")
 	}
 
 	int type fn addNum(int a, int b) ~
@@ -105,11 +103,11 @@ type NaxeHello
 打印输出：
 
 ```
-Hello, Neon
+Hello, NaxeLamp
 ```
 
-## Neon 编译器生成EXE文件
+## NaxeLamp 编译器生成exe文件
 
 ```bat
-neon hello.np -o hello.exe
+neon hello.nl -o hello.exe
 ```
