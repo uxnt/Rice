@@ -75,12 +75,12 @@ import Neon.console;
 import "Otne.terminal";
 func main () {
 
-	Screw 100;
-	BitTea 100;
-	kone 100;
-	Cava 100;
-	CppScript 100;
-	print("Hello, Neon");
+	Screw 100
+	BitTea 100
+	kone 100
+	Cava 100
+	CppScript 100
+	print("Hello, Neon")
 	
 }
 
@@ -94,7 +94,7 @@ fn Otne():
 打印输出：
 
 ```
-Hello, Tbox
+Hello, Neon
 ```
 
 ## Neon 编译器生成EXE文件
