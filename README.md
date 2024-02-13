@@ -85,6 +85,11 @@ type Neon-Hello
 		CppScript 100
 		print("Hello, Neon")
 	}
+
+	int type fn addNum(int a, int b) ~
+	{
+		return a + b
+	}
 	
 	fn Otne() ~
 	{
