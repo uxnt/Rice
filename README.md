@@ -54,24 +54,25 @@
 </div>
 
 
-Neon Language 编程语言是一门开源的编程语言，由 Uxnt 开发。
+NaxeLamp 编程语言是一门开源的编程语言，由 Uxnt 开发。
 
 
 
 
-# Neon 0.0.1
+# NaxeLamp 0.0.1
 
 [![Join the chat at https://gitter.im/tbox-studio/tbox](https://badges.gitter.im/tbox-studio/tbox.svg)](https://gitter.im/tbox-studio/tbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Neon Language
 
 
-## Neon 你好霓虹
+## Neon 你好霓虹 NaxeLamp
 
-[NaxeHello.ne](hello.md)
+[NaxeHello.nl](hello.md)
 
 ```Neon
-import Neon.console;
+import NaxeLamp.console;
+import NaxeLamp.stdio;
 import "Otne.terminal";
 
 type NaxeHello
