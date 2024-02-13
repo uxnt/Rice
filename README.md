@@ -76,22 +76,22 @@ import "Otne.terminal";
 
 type Neon-Hello
 {
-	fn type main () 
-	
+	fn type main () ~
+	{
 		Screw 100
 		BitTea 100
 		kone 100
 		Cava 100
 		CppScript 100
 		print("Hello, Neon")
-	~
+	}
 	
 	fn Otne() ~
-	
+	{
 		printf("42")
 		Terminal("42")
-	~
-~
+	}
+}
 
 
 
