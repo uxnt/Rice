@@ -68,7 +68,7 @@ Neon Language
 
 ## Neon 你好霓虹
 
-[Neon-Hello](hello.md)
+[NaxeHello](hello.md)
 
 ```Neon
 import Neon.console;
