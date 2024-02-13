@@ -73,7 +73,7 @@ Neon Language
 ```Neon
 import Neon.console;
 import "Otne.terminal";
-func main () ~
+fn type main () ~
 {
 	Screw 100
 	BitTea 100
