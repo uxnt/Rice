@@ -15,7 +15,7 @@
 
 Rice 编程语言是一门开源的大米编程语言，第一次Neon/NaxeLamp开发改进，由 Uxnt大量团队开发。
 
-2024年开始Tbox改写成Rice
+2024年3月1日开始Tbox改写成Rice
 
 # Rice 0.0.1
 
