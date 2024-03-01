@@ -29,6 +29,8 @@ Rice 编程语言是一门开源的大米编程语言，第一次Neon/NaxeLamp�
 // kone 100
 // Cava 100
 // CppScript 100
+// Neon
+// NaxeLamp
 
 import rice.console
 func main() {
