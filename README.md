@@ -24,26 +24,15 @@ Rice 编程语言是一门开源的大米编程语言，第一次Neon/NaxeLamp�
 [NaxeHello.nl](hello.md)
 
 ```Neon
-import Rice.console;
-import Rice.stdio;
-import "Otne.terminal";
+// Screw 100
+// BitTea 100
+// kone 100
+// Cava 100
+// CppScript 100
 
-class RiceHello {
-	fn type main () {
-		// Screw 100
-		// BitTea 100
-		// kone 100
-		// Cava 100
-		// CppScript 100
-		print("Hello, Rice")
-	}
-	int type fn addNum(int a, int b) {
-		return a + b
-	}
-	fn Otne() {
-		printf("42")
-		Terminal("42")
-	}
+import rice.console
+func main() {
+	print("Hello, Rice");
 }
 
 ```
