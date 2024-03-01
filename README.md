@@ -4,11 +4,8 @@
 	<img src="https://github.com/uxnt/NaxeLamp/blob/main/NaxeLamp/logo.png" height="120" >
 	</a>
 	</h1>
-	<h4>NaxeLamp 编程语言</h4>
- 		<h4>紫霓虹灯</h4>
-	
+	<h4>Rice 编程语言</h4>
   <div>
-	
   </div>
 	
 	
@@ -16,55 +13,46 @@
 	
 </div>
 
+Rice 编程语言是一门开源的大米编程语言，第一次Neon/NaxeLamp开发改进，由 Uxnt大量团队开发。
 
-NaxeLamp 编程语言是一门开源的编程语言，第一次Neon开发改进，由 Uxnt 开发。
+# Rice 0.0.1
 
-# NaxeLamp 0.0.1
-
-## NaxeLamp 你好，紫霓虹灯
+## Rice 你好，大米
 
 [NaxeHello.nl](hello.md)
 
 ```Neon
-import NaxeLamp.console;
-import NaxeLamp.stdio;
+import Rice.console;
+import Rice.stdio;
 import "Otne.terminal";
 
-type NaxeHello
-{
-	fn type main () ~
-	{
-		Screw 100
-		BitTea 100
-		kone 100
-		Cava 100
-		CppScript 100
-		print("Hello, NaxeLamp")
+class RiceHello {
+	fn type main () {
+		// Screw 100
+		// BitTea 100
+		// kone 100
+		// Cava 100
+		// CppScript 100
+		print("Hello, Rice")
 	}
-
-	int type fn addNum(int a, int b) ~
-	{
+	int type fn addNum(int a, int b) {
 		return a + b
 	}
-	
-	fn Otne() ~
-	{
+	fn Otne() {
 		printf("42")
 		Terminal("42")
 	}
 }
 
-
-
 ```
 打印输出：
 
 ```
-Hello, NaxeLamp
+Hello, Rice
 ```
 
-## NaxeLamp 编译器生成exe文件
+## Rice 编译器生成exe文件
 
 ```bat
-neon hello.nl -o hello.exe
+rice hello.ri -o hello.exe
 ```
